@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://stahe.github.io/es-pam-aspnet-juin-2010/sitemap.xml
