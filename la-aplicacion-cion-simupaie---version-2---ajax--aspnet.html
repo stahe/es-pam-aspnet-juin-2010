@@ -835,13 +835,12 @@
   </li>
 </ul>
 
-<p>Una vez hecho esto, se sustituye en los archivos [Default.aspx, Default.aspx.cs, Default.aspx.designer.cs, Global.asax, Global.asax.cs] el espacio de nombres [pam_v1] por el espacio de nombres [pam_v2] para que sea coherente con el espacio de nombres predeterminado. Por ejemplo, [Default.aspx] [6] se convierte en:</p>
+<p>Una vez hecho esto, en los archivos [Default.aspx, Default.aspx.cs, Default.aspx.designer.cs, Global.asax, Global.asax.cs] se sustituye el espacio de nombres [pam_v1] por el espacio de nombres [pam_v2] para que sea coherente con el espacio de nombres predeterminado. Por ejemplo, [Default.aspx] [6] se convierte en:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;%<span style="color:#0000ff">@</span> <span style="color:#a31515">Page</span> <span style="color:#ff0000">Language</span><span style="color:#0000ff">=&quot;C#&quot;</span> <span style="color:#ff0000">AutoEventWireup</span><span style="color:#0000ff">=&quot;true&quot;</span> <span style="color:#ff0000">CodeBehind</span><span style="color:#0000ff">=&quot;Default.aspx.cs&quot;</span> <span style="color:#ff0000">Inherits</span><span style="color:#0000ff">=&quot;</span><span style="font-weight:bold;color:#00ae00">pam_v</span><span style="font-weight:bold;color:#00ae00">2</span><span style="color:#0000ff">._Default&quot;</span> %&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>...
-</code></pre></div>
 <p>La página [Default.aspx]<span id="pam-v5-default-aspx" name="pam-v5-default-aspx" class="odt-bookmark-anchor"></span> se modificará de la siguiente manera:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000062E000002C27E32800F.png" width="680" height="304" style="display:inline-block; margin:4px;width:17.997cm;height:8.031cm;" class="odt-zoomable" data-zoom-src="images/100000000000062E000002C27E32800F.png" /></td></tr></table>
 
@@ -871,7 +870,7 @@
   </li>
 </ul>
 
-<p>La «ajaxificación» del formulario se puede realizar directamente en el código fuente de [Default.aspx] añadiendo etiquetas de extensiones Ajax:</p>
+<p>La anterior «ajaxificación» del formulario se puede realizar directamente en el código fuente de [Default.aspx] añadiendo etiquetas de extensiones Ajax:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">body</span> <span style="color:#ff0000">style</span><span style="color:#0000ff">=&quot;text-align: left&quot;</span> <span style="color:#ff0000">bgcolor</span><span style="color:#0000ff">=&quot;#ffccff&quot;&gt;</span></span></span>
@@ -1055,7 +1054,7 @@
 <p>Repita las pruebas estableciendo la propiedad <em>EnablePartialRendering</em> del componente <em>ScriptManager1</em> en <em>False</em>:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000010A000000C1B587AE3C.png" width="186" height="135" style="display:inline-block; margin:4px;width:4.93cm;height:3.57cm;" class="odt-zoomable" data-zoom-src="images/100000000000010A000000C1B587AE3C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>Obsérvese que entonces se recupera el comportamiento de una página sin AJAX. Se produce una recarga total de la página al hacer clic en el botón [Salaire]. Repita las pruebas con otro navegador. La prueba multibrowser tiene como objetivo demostrar que el javascript generado por los componentes de servidor ASP / AJAX es interpretado correctamente por los distintos navegadores.</p>
+<p>Observe que entonces se recupera el comportamiento de una página sin AJAX. Se produce una recarga total de la página al hacer clic en el botón [Salaire]. Repita las pruebas con otro navegador. La prueba multibrowser tiene como objetivo demostrar que el javascript generado por los componentes de servidor ASP / AJAX es interpretado correctamente por los diferentes navegadores.</p>
 <p>Para terminar, destacaremos la función de la etiqueta &lt;<em>asp:UpdateProgress</em>&gt;. En el código del procedimiento [ButtonSalaire_Click] de [Default.aspx.cs], añadiremos una instrucción que detiene el procedimiento durante 3 segundos:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> System.Threading;</span></span>
@@ -1066,7 +1065,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        LabelHeureSalaire.Text = <span style="color:#2b91af">DateTime</span>.Now.ToString(<span style="color:#a31515">&quot;hh:mm:ss&quot;</span>);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        // espera </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#2b91af">Thread</span>.Sleep(3000);</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        // se verifican los datos</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // se comprueban los datos</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">....</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>

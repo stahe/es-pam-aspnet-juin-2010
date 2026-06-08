@@ -994,7 +994,7 @@
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
 <p><strong>Requisitos previos</strong></p>
 <hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
-<p>En una escala [débutant-intermédiaire-avancé], este documento se encuentra en la sección [intermédiaire]. Para su comprensión se requieren varios requisitos previos que se pueden encontrar en algunos de los documentos que he escrito:</p>
+<p>En una escala [débutant-intermédiaire-avancé], este documento se encuentra en la parte [intermédiaire]. Para comprenderlo se requieren varios requisitos previos que se pueden encontrar en algunos de los documentos que he escrito:</p>
 <ol>
   <li><b>Lenguaje C# 2008</b>: [Apprentissage du langage C# Version 3.0 avec le Framework .NET 3.5 ]
   </li>
@@ -1025,7 +1025,7 @@
 
 <p><span id="refheading1883301168461456" name="refheading1883301168461456" class="odt-bookmark-anchor"></span></p>
 <h2 id="61-el-lugar-de-nhibernate-en-una-arquitectura-net-en-capas">6.1. <span style="color: #4f81bd">El lugar de NHIBERNATE en una arquitectura .NET en capas</span></h2>
-<p>Una aplicación .NET que utilice una base de datos puede estructurarse en capas de la siguiente manera:</p>
+<p>Una aplicación .NET que utiliza una base de datos puede estructurarse en capas de la siguiente manera:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007610000011AE340E2D6.png" width="680" height="102" style="display:inline-block; margin:4px;width:17.997cm;height:2.686cm;" class="odt-zoomable" data-zoom-src="images/10000000000007610000011AE340E2D6.png" /></td></tr></table>
 
 <p>La capa [dao] se comunica con SGBD a través de API ADO.NET (véase el apartado<a href="el-caso-practico.html#refheadingtoc744694255346799"><u><span style="color: #0563c1"> 3.3</span></u></a>). En la arquitectura anterior, el conector [ADO.NET] está vinculado al SGBD. Por lo tanto, la clase que implementa la interfaz [IDbConnection] es:</p>
@@ -1263,7 +1263,7 @@
 </code></pre></div>
 
 <ul>
-  <li>Líneas 4-7: definen secciones de configuración en el archivo [App.config]. Consideremos la línea 6:
+  <li>Líneas 4-7: definen secciones de configuración en el archivo [App.config]. Veamos la línea 6:
   </li>
 </ul>
 
@@ -1507,7 +1507,7 @@
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">tasa de cotización para la contribución social generalizada deducible</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>CSGRDS
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Tasa de cotización para la contribución social generalizada y la contribución al reembolso de la deuda social</div></td></tr></table></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">tipo de cotización para la contribución social generalizada y la contribución al reembolso de la deuda social</div></td></tr></table></td></tr></table>
 
 <p>Una línea de esta tabla puede encapsularse en un objeto de tipo [Cotisations.cs]<span id="cotisation-nhibernate" name="cotisation-nhibernate" class="odt-bookmark-anchor"></span> de la siguiente manera:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
@@ -1556,11 +1556,11 @@
 <ul>
   <li>el archivo de mapeo es un archivo Xml definido dentro de la etiqueta &lt;hibernate-mapping&gt; (líneas 2 y 14)
   </li>
-  <li>línea 4: la etiqueta &lt;class&gt; establece el vínculo entre una tabla de la base de datos y una clase. En este caso, la tabla [COTISATIONS] (atributo <i>table</i>) y la clase [Cotisations] (atributo <i>name</i>). En .NET, una clase debe definirse mediante su nombre completo (espacio de nombres incluido) y mediante el ensamblado que la contiene. Esta información se proporciona en la línea 3. La primera (espacio de nombres) se puede encontrar en la definición de la clase. La segunda (ensamblado) es el nombre del ensamblado del proyecto. Ya hemos indicado cómo encontrar este nombre.
+  <li>Línea 4: la etiqueta &lt;class&gt; establece el vínculo entre una tabla de la base de datos y una clase. En este caso, la tabla [COTISATIONS] (atributo <i>table</i>) y la clase [Cotisations] (atributo <i>name</i>). En .NET, una clase debe definirse mediante su nombre completo (espacio de nombres incluido) y mediante el ensamblado que la contiene. Esta información se proporciona en la línea 3. La primera (espacio de nombres) se puede encontrar en la definición de la clase. La segunda (ensamblado) es el nombre del ensamblado del proyecto. Ya hemos indicado cómo encontrar este nombre.
   </li>
   <li>Líneas 5-7: la etiqueta &lt;id&gt; sirve para definir la asignación de la clave primaria de la tabla [cotisations].
     <ul>
-      <li>línea 5: el atributo <i>name </i>designa el campo de la clase [Cotisations] que va a recibir la clave primaria de la tabla [cotisations]. El atributo <i>column </i>designa la columna de la tabla [cotisations] que sirve como clave primaria. El atributo <i>unsaved-value </i>sirve para definir una clave primaria aún no generada. Este valor permite a NHibernate saber cómo guardar un objeto [Cotisations] en la tabla [cotisations]. Si este objeto tiene un campo Id=0, realizará una operación SQL INSERT; de lo contrario, realizará una operación SQL UPDATE. El valor de <i>unsaved-value </i>depende del tipo del campo <i>Id </i>de la clase [Cotisations]. En este caso, es de tipo <i>int </i>y el valor por defecto de un tipo <i>int </i>es 0. Un objeto [Cotisations] aún no guardado (por lo tanto, sin clave primaria) tendrá, por lo tanto, su campo Id=0. Si el campo <i>Id </i>hubiera sido de tipo <i>Object </i>o derivado, se habría escrito <i>unsaved-value=null.  </i>
+      <li>línea 5: el atributo <i>name </i>designa el campo de la clase [Cotisations] que va a recibir la clave primaria de la tabla [cotisations]. El atributo <i>column </i>designa la columna de la tabla [cotisations] que sirve como clave primaria. El atributo <i>unsaved-value </i>sirve para definir una clave primaria aún no generada. Este valor permite a NHibernate saber cómo guardar un objeto [Cotisations] en la tabla [cotisations]. Si este objeto tiene un campo Id=0, realizará una operación SQL INSERT; de lo contrario, realizará una operación SQL UPDATE. El valor de <i>unsaved-value </i>depende del tipo del campo <i>Id </i>de la clase [Cotisations]. En este caso, es de tipo <i>int </i>y el valor por defecto de un tipo <i>int </i>es 0. Un objeto [Cotisations] aún no guardado (por lo tanto, sin clave primaria) tendrá, por tanto, su campo Id=0. Si el campo <i>Id </i>hubiera sido de tipo <i>Object </i>o derivado, se habría escrito <i>unsaved-value=null.  </i>
       </li>
       <li>línea 6: cuando NHibernate debe guardar un objeto [Cotisations] con un campo Id=0, debe realizar en la base de datos una operación INSERT durante la cual debe obtener un valor para la clave primaria del registro. La mayoría de los SGBD tienen un método propio para generar automáticamente este valor. La etiqueta &lt;generator&gt; sirve para definir el mecanismo que se utilizará para la generación de la clave primaria. La etiqueta &lt;generator class=&quot;native&quot;&gt; indica que se debe utilizar el mecanismo predeterminado del SGBD utilizado. En el apartado<a href="#autoincrement"><u><span style="color: #0563c1"> 6.2</span></u></a> vimos que las claves primarias de nuestras tres tablas MySQL tenían el atributo <i>autoincrement</i>. Durante sus operaciones, INSERT y NHibernate no proporcionarán ningún valor a la columna ID del registro añadido, dejando que MySQL genere dicho valor.
       </li>
@@ -1623,7 +1623,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>El archivo de asignación de la tabla [indemnites] &lt;--&gt; clase [Indemnites] podría ser el siguiente (Indemnites.hbm.xml):</p>
+<p>El archivo de mapeo de la tabla [indemnites] &lt;--&gt; clase [Indemnites] podría ser el siguiente (Indemnites.hbm.xml):</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;?</span><span style="color:#a31515">xml</span><span style="color:#0000ff"> </span><span style="color:#ff0000">version</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">1.0</span>&quot;<span style="color:#0000ff"> </span><span style="color:#ff0000">encoding</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">utf-8</span>&quot;<span style="color:#0000ff"> ?&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">hibernate-mapping</span><span style="color:#0000ff"> </span><span style="color:#ff0000">xmlns</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">urn:nhibernate-mapping-2.2</span>&quot;</span></span>
@@ -1872,7 +1872,7 @@
   </li>
   <li>Línea 6: las operaciones de persistencia se realizarán dentro de una transacción. O bien se completan todas con éxito, o bien ninguna se completa con éxito. Dentro de la cláusula <i>«using», </i>la transacción se confirma mediante un <i>«Commit» </i>(línea 10). Si, dentro de la transacción, una operación de persistencia lanza una excepción, la transacción se anulará automáticamente mediante un <i>«Rollback» </i>al salir de <i>la cláusula «using</i>».
   </li>
-  <li>El try / catch de las líneas 1 y 13 permite interceptar una posible excepción lanzada por el código dentro del try (sesión, transacción, persistencia).
+  <li>El try/catch de las líneas 1 y 13 permite interceptar una posible excepción lanzada por el código dentro del try (sesión, transacción, persistencia).
   </li>
 </ul>
 
@@ -1894,22 +1894,22 @@
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">crea una consulta HQL (Hibernate Query Language) para su ejecución posterior.</div><div style="margin:0 0 0.5em 0"><i>IQuery query=session.createQuery(&quot;select e from Empleado e);</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="ow">void</span><span class="w"> </span><span class="nx">Delete</span><span class="p">(</span><span class="nx">object</span><span class="w"> </span><span class="nx">obj</span><span class="p">)</span>
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">elimina un objeto. Este puede pertenecer a la sesión (adjunto) o no (separado). Al sincronizar la sesión con la base de datos, se realizará una operación SQL DELETE sobre este objeto.</div><div style="margin:0 0 0.5em 0"><i>// programa principal</i></div><div style="margin:0 0 0.5em 0"><i>Empleado e = session.Get&lt;Empleado&gt;(143);</i></div><div style="margin:0 0 0.5em 0"><i>// inicialización de la fábrica NHibernate</i></div><div style="margin:0 0 0.5em 0"><i>session.Delete(e);</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">elimina un objeto. Este puede pertenecer a la sesión (adjunto) o no (separado). Al sincronizar la sesión con la base de datos, se realizará una operación SQL DELETE sobre este objeto.</div><div style="margin:0 0 0.5em 0"><i>// se carga un empleado de la BD</i></div><div style="margin:0 0 0.5em 0"><i>Empleado e = session.Get&lt;Empleado&gt;(143);</i></div><div style="margin:0 0 0.5em 0"><i>// se elimina</i></div><div style="margin:0 0 0.5em 0"><i>session.Delete(e);</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>void Flush()
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">fuerza la sincronización de la sesión con la base de datos. El contenido de la sesión no cambia.</div><div style="margin:0 0 0.5em 0"><i>session.Flush();</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>T Get&lt;T&gt;(object id)
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">busca en la base de datos el objeto <b>T </b>con la clave primaria <b>id</b>. Si este objeto no existe, establece el puntero <b>en nulo</b>.</div><div style="margin:0 0 0.5em 0"><i>// visualización del contenido de la base</i></div><div style="margin:0 0 0.5em 0"><i>Empleado e = session.Get&lt;Empleado&gt;(143);</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">busca en la base de datos el objeto <b>T </b>con la clave primaria <b>id</b>. Si este objeto no existe, establece el puntero <b>en nulo</b>.</div><div style="margin:0 0 0.5em 0"><i>// se carga un empleado de la BD</i></div><div style="margin:0 0 0.5em 0"><i>Empleado e = session.Get&lt;Empleado&gt;(143);</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>object Save(object obj)
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">coloca el objeto <b>obj </b>en la sesión. Este objeto no tiene clave primaria antes de <i>guardar</i>. Después de <i>guardar</i>, tiene una. Durante la sincronización de la sesión, se realizará una operación SQL INSERT en la base de datos.</div><div style="margin:0 0 0.5em 0"><i>// se muestra la excepción </i></div><div style="margin:0 0 0.5em 0"><i>Empleado e = new Empleado(){...};</i></div><div style="margin:0 0 0.5em 0"><i>// espera de teclado</i></div><div style="margin:0 0 0.5em 0"><i>e = session.Save(e);</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">coloca el objeto <b>obj </b>en la sesión. Este objeto no tiene clave primaria antes de <i>guardar</i>. Después de <i>guardar</i>, tiene una. Durante la sincronización de la sesión, se realizará una operación SQL INSERT en la base de datos.</div><div style="margin:0 0 0.5em 0"><i>// creamos un empleado</i></div><div style="margin:0 0 0.5em 0"><i>Empleado e = new Empleado(){...};</i></div><div style="margin:0 0 0.5em 0"><i>// lo guardamos</i></div><div style="margin:0 0 0.5em 0"><i>e = session.Save(e);</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="n">SaveOrUpdate</span><span class="p">(</span><span class="k">object</span><span class="w"> </span><span class="n">obj</span><span class="p">)</span>
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Realiza una operación <i>Save </i>si <b>obj </b>no tiene clave primaria o una operación <i>Update </i>si ya tiene una.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="n">void</span><span class="w"> </span><span class="k">Update</span><span class="p">(</span><span class="k">object</span><span class="w"> </span><span class="n">obj</span><span class="p">)</span>
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">actualiza el objeto <b>obj</b> en la base de datos. A continuación, se realiza una operación SQL UPDATE en la base.</div><div style="margin:0 0 0.5em 0"><i>// prueba1</i></div><div style="margin:0 0 0.5em 0"><i>Empleado e = session.Get&lt;Empleado&gt;(143);</i></div><div style="margin:0 0 0.5em 0"><i>// inicio de sesión </i></div><div style="margin:0 0 0.5em 0"><i>e.Nom=...;</i></div><div style="margin:0 0 0.5em 0"><i>// inicio de transacción</i></div><div style="margin:0 0 0.5em 0"><i>session.Update(e);</i></div></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">actualiza el objeto <b>obj</b> en la base de datos. A continuación, se realiza una operación SQL UPDATE en la base.</div><div style="margin:0 0 0.5em 0"><i>// se carga un empleado de la BD</i></div><div style="margin:0 0 0.5em 0"><i>Empleado e = session.Get&lt;Empleado&gt;(143);</i></div><div style="margin:0 0 0.5em 0"><i>// se cambia su nombre</i></div><div style="margin:0 0 0.5em 0"><i>e.Nom=...;</i></div><div style="margin:0 0 0.5em 0"><i>// se actualiza en la base</i></div><div style="margin:0 0 0.5em 0"><i>session.Update(e);</i></div></td></tr></table>
 
 <p><span id="refheading1883481168461456" name="refheading1883481168461456" class="odt-bookmark-anchor"></span></p>
 <h3 id="644-la-interfaz-iquery">6.4.4. <span style="color: #4f81bd">La interfaz IQuery</span></h3>
@@ -1918,29 +1918,27 @@
 </code></pre></div>
 <p>El parámetro del método <em>createQuery</em> es una consulta HQL (Hibernate Query Language), un lenguaje similar al SQL, pero que consulta clases en lugar de tablas. La consulta anterior solicita la lista de todos los empleados. A continuación se muestran algunos ejemplos de consultas HQL:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="k">select</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">Employe</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Nom</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;A%&#39;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="k">select</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">Employe</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Nom</span><span class="w"> </span><span class="k">asc</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="k">select</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">Employe</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Indemnites</span><span class="p">.</span><span class="n">Indice</span><span class="o">=</span><span class="mi">2</span>
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="k">select</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">Employe</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Nom</span><span class="w"> </span><span class="k">asc</span>
+<a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a><span class="k">select</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">Employe</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">Indemnites</span><span class="p">.</span><span class="n">Indice</span><span class="o">=</span><span class="mi">2</span>
 </code></pre></div>
 <p>A continuación, presentamos algunos de los métodos de la interfaz <strong>IQuery</strong>:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>IList&lt;T&gt; List&lt;T&gt;()
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>IList&lt;T&gt; List&lt;T&gt;()
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">devuelve el resultado de la consulta en forma de una lista de objetos T</div><div style="margin:0 0 0.5em 0"><i>IList&lt;Empleado&gt; empleados=session.createQuery(&quot;select e from Empleado e order by e.Nom asc&quot;).List&lt;Empleado&gt;();</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>IList List()
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>IList List()
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">devuelve el resultado de la consulta en forma de lista, donde cada elemento de la lista representa una fila del resultado de <i>la consulta Select </i>en forma de matriz de objetos.</div><div style="margin:0 0 0.5em 0"><i>IList líneas=session.createQuery(&quot;select e.Nom, e.Prenom, e.SS from Empleado e&quot;).List();</i></div><div style="margin:0 0 0.5em 0"><i>líneas[i][j] </i>representa la columna j de la línea i en un tipo <b>objeto</b>. Así, líneas[10][1] es un tipo <b>objeto </b>que representa el nombre de una persona. Por lo general, se necesitan conversiones de tipo para recuperar los datos en su tipo exacto.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>T UniqueResult&lt;T&gt;()
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>T UniqueResult&lt;T&gt;()
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">devuelve el primer objeto del resultado de la consulta</div><div style="margin:0 0 0.5em 0"><i>Empleado e=session.createQuery(&quot;select e from Empleado e where e.Nom=&#x27;MARTIN&#x27;&quot;).UniqueResult&lt;Empleado&gt;();</i></div></td></tr></table>
 
 <p>Se puede <strong>configurar</strong> una consulta HQL:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-50-1">1</a></span>
-<span class="normal"><a href="#__codelineno-50-2">2</a></span>
-<span class="normal"><a href="#__codelineno-50-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1"></a><span class="n">string</span><span class="w"> </span><span class="n">numSecu</span><span class="p">;</span>
-<a id="__codelineno-50-2" name="__codelineno-50-2"></a><span class="p">...</span>
-<a id="__codelineno-50-3" name="__codelineno-50-3"></a><span class="n">Employe</span><span class="w"> </span><span class="n">e</span><span class="o">=</span><span class="k">session</span><span class="p">.</span><span class="n">createQuery</span><span class="p">(</span><span class="ss">&quot;select e from Employe e where e.SS=:num&quot;</span><span class="p">).</span><span class="n">SetString</span><span class="p">(</span><span class="ss">&quot;num&quot;</span><span class="p">,</span><span class="n">numSecu</span><span class="p">).</span><span class="n">UniqueResult</span><span class="o">&lt;</span><span class="n">Employe</span><span class="o">&gt;</span><span class="p">();</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-48-1">1</a></span>
+<span class="normal"><a href="#__codelineno-48-2">2</a></span>
+<span class="normal"><a href="#__codelineno-48-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1"></a><span class="n">string</span><span class="w"> </span><span class="n">numSecu</span><span class="p">;</span>
+<a id="__codelineno-48-2" name="__codelineno-48-2"></a><span class="p">...</span>
+<a id="__codelineno-48-3" name="__codelineno-48-3"></a><span class="n">Employe</span><span class="w"> </span><span class="n">e</span><span class="o">=</span><span class="k">session</span><span class="p">.</span><span class="n">createQuery</span><span class="p">(</span><span class="ss">&quot;select e from Employe e where e.SS=:num&quot;</span><span class="p">).</span><span class="n">SetString</span><span class="p">(</span><span class="ss">&quot;num&quot;</span><span class="p">,</span><span class="n">numSecu</span><span class="p">).</span><span class="n">UniqueResult</span><span class="o">&lt;</span><span class="n">Employe</span><span class="o">&gt;</span><span class="p">();</span>
 </code></pre></div></td></tr></table></div>
 <p>En la consulta HQL de la línea 3, <em>:num</em> es un parámetro que debe recibir un valor antes de que se ejecute la consulta. En el ejemplo anterior, se utiliza el método SetString para ello. La interfaz <em>IQuery</em> dispone de varios métodos <strong>Set</strong> para asignar un valor a un parámetro: </p>
 <ul>
@@ -2002,20 +2000,20 @@
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">private</span> <span style="color:#0000ff">static</span> <span style="color:#2b91af">ISessionFactory</span> sessionFactory = <span style="color:#0000ff">null</span>;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // se recupera la lista de empleados</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // programa principal</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      // se muestra</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      // inicialización de la fábrica NHibernate</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      sessionFactory = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Configuration</span>().Configure().BuildSessionFactory();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">try</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        // se recupera la lista de indemnites</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // visualización del contenido de la base</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Affichage base -------------------------------------&quot;</span>);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        ShowDataBase1();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span> ex)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        // se muestra</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // se muestra la excepción </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#0000ff">string</span>.Format(<span style="color:#a31515">&quot;L&#x27;erreur suivante s&#x27;est produite : [{0}]&quot;</span>, ex.ToString()));</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">finally</span></span></span>
@@ -2025,40 +2023,40 @@
 <span class="odt-code-line"><span class="odt-code-line-content">          sessionFactory.Close();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      // se recupera la lista de cotisations</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      // espera de teclado</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#2b91af">Console</span>.ReadLine();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // confirmar transacción</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // prueba1</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> ShowDataBase1()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      //------------- lista de empleados</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      // inicio de sesión </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">using</span> (<span style="color:#2b91af">ISession</span> session = sessionFactory.OpenSession())</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        //------------- lista de indemnizaciones</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // inicio de transacción</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">using</span> (<span style="color:#2b91af">ITransaction</span> transaction = session.BeginTransaction())</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          //------------- tabla de tarifas de cotisations</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // se recupera la lista de empleados</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#2b91af">IList</span>&lt;<span style="color:#2b91af">Employe</span>&gt; employes = session.CreateQuery(<span style="color:#a31515">@&quot;select e from Employe e order by e.Nom asc&quot;</span>).List&lt;<span style="color:#2b91af">Employe</span>&gt;();</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          // programa principal</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // se muestra</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;--------------- liste des employés&quot;</span>);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">foreach</span> (<span style="color:#2b91af">Employe</span> e <span style="color:#0000ff">in</span> employes)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#2b91af">Console</span>.WriteLine(e);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          // inicialización de fábrica NHibernate</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // se recupera la lista de indemnites</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#2b91af">IList</span>&lt;<span style="color:#2b91af">Indemnites</span>&gt; indemnites = session.CreateQuery(<span style="color:#a31515">@&quot;select i from Indemnites i order by i.Indice asc&quot;</span>).List&lt;<span style="color:#2b91af">Indemnites</span>&gt;();</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          // eliminación del contenido de la base</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // se muestra</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;--------------- liste des indemnités&quot;</span>);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">foreach</span> (<span style="color:#2b91af">Indemnites</span> i <span style="color:#0000ff">in</span> indemnites)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#2b91af">Console</span>.WriteLine(i);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          // se muestra la excepción </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // se recupera la lista de cotisations</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#2b91af">Cotisations</span> cotisations = session.CreateQuery(<span style="color:#a31515">@&quot;select c from Cotisations c&quot;</span>).UniqueResult&lt;<span style="color:#2b91af">Cotisations</span>&gt;();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;--------------- tableau des taux de cotisations&quot;</span>);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#2b91af">Console</span>.WriteLine(cotisations);</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          // espera de teclado</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // confirmar transacción</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          transaction.Commit();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
@@ -2096,25 +2094,25 @@
 </ul>
 
 <p><u><strong>Pantalla obtenida</strong></u>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-51-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-51-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-51-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-51-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-51-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-51-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-51-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-51-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-51-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-51-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1"></a>Affichage base -------------------------------------
-<a id="__codelineno-51-2" name="__codelineno-51-2"></a>-- prueba1
-<a id="__codelineno-51-3" name="__codelineno-51-3"></a>[254104940426058|Jouveinal|Marie|5 rue des oiseaux|St Corentin|49203|[1|1,93|2|3|12]]
-<a id="__codelineno-51-4" name="__codelineno-51-4"></a>[260124402111742|Laverti|Justine|La Brûlerie|St Marcel|49014|[2|2,1|2,1|3,1|15]]
-<a id="__codelineno-51-5" name="__codelineno-51-5"></a>
-<a id="__codelineno-51-6" name="__codelineno-51-6"></a>-- ver ejemplo anterior
-<a id="__codelineno-51-7" name="__codelineno-51-7"></a>[1|1,93|2|3|12]
-<a id="__codelineno-51-8" name="__codelineno-51-8"></a>[2|2,1|2,1|3,1|15]
-<a id="__codelineno-51-9" name="__codelineno-51-9"></a>-- ClearDataBase1
-<a id="__codelineno-51-10" name="__codelineno-51-10"></a>[3,49|6,15|9,39|7,88]
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-49-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-49-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-49-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-49-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-49-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-49-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-49-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-49-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-49-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-49-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1"></a>Affichage base -------------------------------------
+<a id="__codelineno-49-2" name="__codelineno-49-2"></a>--------------- lista de empleados
+<a id="__codelineno-49-3" name="__codelineno-49-3"></a>[254104940426058|Jouveinal|Marie|5 rue des oiseaux|St Corentin|49203|[1|1,93|2|3|12]]
+<a id="__codelineno-49-4" name="__codelineno-49-4"></a>[260124402111742|Laverti|Justine|La Brûlerie|St Marcel|49014|[2|2,1|2,1|3,1|15]]
+<a id="__codelineno-49-5" name="__codelineno-49-5"></a>
+<a id="__codelineno-49-6" name="__codelineno-49-6"></a>--------------- lista de indemnizaciones
+<a id="__codelineno-49-7" name="__codelineno-49-7"></a>[1|1,93|2|3|12]
+<a id="__codelineno-49-8" name="__codelineno-49-8"></a>[2|2,1|2,1|3,1|15]
+<a id="__codelineno-49-9" name="__codelineno-49-9"></a>--------------- tabla de tarifas de cotisations
+<a id="__codelineno-49-10" name="__codelineno-49-10"></a>[3,49|6,15|9,39|7,88]
 </code></pre></div></td></tr></table></div>
 <p>Cabe destacar, en las líneas 3 y 4, que al solicitar los datos de un empleado, también se ha obtenido su indemnización.</p>
 <p><span id="refheading1883541168461456" name="refheading1883541168461456" class="odt-bookmark-anchor"></span></p>
@@ -2135,14 +2133,14 @@
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">private</span> <span style="color:#0000ff">static</span> <span style="color:#2b91af">ISessionFactory</span> sessionFactory = <span style="color:#0000ff">null</span>;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // inicio de sesión </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // programa principal</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> Main(<span style="color:#0000ff">string</span>[] args)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      // inicio de transacción</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      // inicialización de fábrica NHibernate</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      sessionFactory = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Configuration</span>().Configure().BuildSessionFactory();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">try</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        // se recupera la lista de empleados</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // eliminación del contenido de la base</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Effacement base -------------------------------------&quot;</span>);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        ClearDataBase1();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Affichage base -------------------------------------&quot;</span>);</span></span>
@@ -2154,7 +2152,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">Exception</span> ex)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        // se eliminan todos los empleados</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // se muestra la excepción </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#0000ff">string</span>.Format(<span style="color:#a31515">&quot;L&#x27;erreur suivante s&#x27;est produite : [{0}]&quot;</span>, ex.ToString()));</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">finally</span></span></span>
@@ -2164,76 +2162,76 @@
 <span class="odt-code-line"><span class="odt-code-line-content">          sessionFactory.Close();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      // se recupera la lista de indemnizaciones</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      // espera de teclado</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#2b91af">Console</span>.ReadLine();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // se eliminan las indemnizaciones</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // prueba1</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> ShowDataBase()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">             // se recupera la lista de cotisations</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">             // ver ejemplo anterior</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // confirmar transacción</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // ClearDataBase1</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> ClearDataBase1()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      // FillDataBase</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      // inicio de sesión </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">using</span> (<span style="color:#2b91af">ISession</span> session = sessionFactory.OpenSession())</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        // inicio de sesión </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // inicio de transacción</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">using</span> (<span style="color:#2b91af">ITransaction</span> transaction = session.BeginTransaction())</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          // inicio de transacción</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // se recupera la lista de empleados</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#2b91af">IList</span>&lt;<span style="color:#2b91af">Employe</span>&gt; employes = session.CreateQuery(<span style="color:#a31515">@&quot;select e from Employe e&quot;</span>).List&lt;<span style="color:#2b91af">Employe</span>&gt;();</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          // se crean dos indemnizaciones</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // se eliminan todos los empleados</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;--------------- suppression des employés associés&quot;</span>);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">foreach</span> (<span style="color:#2b91af">Employe</span> e <span style="color:#0000ff">in</span> employes)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            session.Delete(e);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          // se crean dos empleados</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // se recupera la lista de indemnizaciones</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#2b91af">IList</span>&lt;<span style="color:#2b91af">Indemnites</span>&gt; indemnites = session.CreateQuery(<span style="color:#a31515">@&quot;select i from Indemnites i&quot;</span>).List&lt;<span style="color:#2b91af">Indemnites</span>&gt;();</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          // se crean las tarifas de cotisations</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // se eliminan las indemnizaciones</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;--------------- suppression des indemnités&quot;</span>);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">foreach</span> (<span style="color:#2b91af">Indemnites</span> i <span style="color:#0000ff">in</span> indemnites)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            session.Delete(i);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          // se guarda todo</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // se recupera la lista de cotisations</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#2b91af">Cotisations</span> cotisations = session.CreateQuery(<span style="color:#a31515">@&quot;select c from Cotisations c&quot;</span>).UniqueResult&lt;<span style="color:#2b91af">Cotisations</span>&gt;();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;--------------- suppression des taux de cotisations&quot;</span>);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">if</span> (cotisations != <span style="color:#0000ff">null</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            session.Delete(cotisations);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          // se confirma la transacción</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // confirmar transacción</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          transaction.Commit();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    //------------- eliminación de los empleados y de las indemnizaciones asociadas</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // FillDataBase</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> FillDataBase1()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      //------------- eliminación de las indemnizaciones restantes</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      // inicio de sesión </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">using</span> (<span style="color:#2b91af">ISession</span> session = sessionFactory.OpenSession())</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        //------------- eliminación de las tasas de cotisations</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // inicio de transacción</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">using</span> (<span style="color:#2b91af">ITransaction</span> transaction = session.BeginTransaction())</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          //------------- lista de empleados</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // se crean dos indemnizaciones</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#2b91af">Indemnites</span> i1 = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Indemnites</span>() { Id = 0, Indice = 1, BaseHeure = 1.93, EntretienJour = 2, RepasJour = 3, IndemnitesCp = 12 };</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#2b91af">Indemnites</span> i2 = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Indemnites</span>() { Id = 0, Indice = 2, BaseHeure = 2.1, EntretienJour = 2.1, RepasJour = 3.1, IndemnitesCp = 15 };</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          //------------- lista de indemnizaciones</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // se crean dos empleados</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#2b91af">Employe</span> e1 = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Employe</span>() { Id = 0, SS = <span style="color:#a31515">&quot;254104940426058&quot;</span>, Nom = <span style="color:#a31515">&quot;Jouveinal&quot;</span>, Prenom = <span style="color:#a31515">&quot;Marie&quot;</span>, Adresse = <span style="color:#a31515">&quot;5 rue des oiseaux&quot;</span>, Ville = <span style="color:#a31515">&quot;St Corentin&quot;</span>, CodePostal = <span style="color:#a31515">&quot;49203&quot;</span>, Indemnites = i1 };</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#2b91af">Employe</span> e2 = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Employe</span>() { Id = 0, SS = <span style="color:#a31515">&quot;260124402111742&quot;</span>, Nom = <span style="color:#a31515">&quot;Laverti&quot;</span>, Prenom = <span style="color:#a31515">&quot;Justine&quot;</span>, Adresse = <span style="color:#a31515">&quot;La Brûlerie&quot;</span>, Ville = <span style="color:#a31515">&quot;St Marcel&quot;</span>, CodePostal = <span style="color:#a31515">&quot;49014&quot;</span>, Indemnites = i2 };</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          //------------- tabla de tarifas de cotisations</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // se crean las tarifas de cotisations</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#2b91af">Cotisations</span> cotisations = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Cotisations</span>() { Id = 0, CsgRds = 3.49, Csgd = 6.15, Secu = 9.39, Retraite = 7.88 };</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          //------------- lista de empleados</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // se guarda todo</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          session.Save(e1);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          session.Save(e2);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          session.Save(cotisations);</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          //------------- lista de indemnizaciones</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // se confirma la transacción</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          transaction.Commit();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
@@ -2295,57 +2293,39 @@
 
 <p>La línea 15, que mapea la relación de clave externa entre la entidad <em>Empleado</em> y la entidad <em>Indemnites</em>, tiene el atributo <em>cascade= &quot;save-update&quot;</em>, lo que implica que las operaciones «<em>save</em>» y «update» de la entidad <em>Empleado</em> se propagan a la entidad interna <em>Indemnites</em>.</p>
 <p><u><strong>Pantalla obtenida</strong></u>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>Effacement base -------------------------------------
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>--------------- tabla de tarifas de cotisations
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>-- FindEmployee
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>-- inicio de sesión 
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>Affichage base -------------------------------------
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>-- inicio de transacción
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>-- búsqueda de un empleado por su número SS
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>-- confirmar transacción
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>Remplissage base -------------------------------------
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>Affichage base -------------------------------------
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>-- SaveEmptyEmployee
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>[254104940426058|Jouveinal|Marie|5 rue des oiseaux|St Corentin|49203|[2|2,1|2,1|3,1|15]]
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>[260124402111742|Laverti|Justine|La Brûlerie|St Marcel|49014|[1|1,93|2|3|12]]
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>-- inicio de sesión 
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>[1|1,93|2|3|12]
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>[2|2,1|2,1|3,1|15]
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>-- inicio de transacción
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>[3,49|6,15|9,39|7,88]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>Effacement base -------------------------------------
+<a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>--------------- eliminación de los empleados y de las indemnizaciones asociadas
+<a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a>--------------- eliminación de las indemnizaciones restantes
+<a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a>--------------- eliminación de las tasas de cotisations
+<a id="__codelineno-50-5" name="__codelineno-50-5" href="#__codelineno-50-5"></a>Affichage base -------------------------------------
+<a id="__codelineno-50-6" name="__codelineno-50-6" href="#__codelineno-50-6"></a>--------------- lista de empleados
+<a id="__codelineno-50-7" name="__codelineno-50-7" href="#__codelineno-50-7"></a>--------------- lista de indemnizaciones
+<a id="__codelineno-50-8" name="__codelineno-50-8" href="#__codelineno-50-8"></a>--------------- tabla de tarifas de cotisations
+<a id="__codelineno-50-9" name="__codelineno-50-9" href="#__codelineno-50-9"></a>
+<a id="__codelineno-50-10" name="__codelineno-50-10" href="#__codelineno-50-10"></a>Remplissage base -------------------------------------
+<a id="__codelineno-50-11" name="__codelineno-50-11" href="#__codelineno-50-11"></a>Affichage base -------------------------------------
+<a id="__codelineno-50-12" name="__codelineno-50-12" href="#__codelineno-50-12"></a>--------------- lista de empleados
+<a id="__codelineno-50-13" name="__codelineno-50-13" href="#__codelineno-50-13"></a>[254104940426058|Jouveinal|Marie|5 rue des oiseaux|St Corentin|49203|[2|2,1|2,1|3,1|15]]
+<a id="__codelineno-50-14" name="__codelineno-50-14" href="#__codelineno-50-14"></a>[260124402111742|Laverti|Justine|La Brûlerie|St Marcel|49014|[1|1,93|2|3|12]]
+<a id="__codelineno-50-15" name="__codelineno-50-15" href="#__codelineno-50-15"></a>--------------- lista de indemnizaciones
+<a id="__codelineno-50-16" name="__codelineno-50-16" href="#__codelineno-50-16"></a>[1|1,93|2|3|12]
+<a id="__codelineno-50-17" name="__codelineno-50-17" href="#__codelineno-50-17"></a>[2|2,1|2,1|3,1|15]
+<a id="__codelineno-50-18" name="__codelineno-50-18" href="#__codelineno-50-18"></a>--------------- tabla de tarifas de cotisations
+<a id="__codelineno-50-19" name="__codelineno-50-19" href="#__codelineno-50-19"></a>[3,49|6,15|9,39|7,88]
 </code></pre></div>
 <p><span id="refheading1883561168461456" name="refheading1883561168461456" class="odt-bookmark-anchor"></span></p>
 <h3 id="653-busqueda-de-un-empleado">6.5.3. <span style="color: #4f81bd">Búsqueda de un empleado</span></h3>
 <p>El programa [Program.cs] cuenta con diversos métodos que ilustran el acceso y la manipulación de los datos de la base. A continuación, presentamos algunos de ellos.</p>
 <p>El método [FindEmployee] permite buscar a un empleado por su número de la Seguridad Social:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line"><span class="odt-code-line-content">// se crea un empleado vacío</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// FindEmployee</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> FindEmployee() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">try</span> {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        // se crea una indemnización inexistente</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // inicio de sesión </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">using</span> (<span style="color:#2b91af">ISession</span> session = sessionFactory.OpenSession()) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          // que se asocia al empleado</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // inicio de transacción</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">using</span> (<span style="color:#2b91af">ITransaction</span> transaction = session.BeginTransaction()) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            // se guarda el empleado dejando vacíos los demás campos</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // búsqueda de un empleado por su número SS</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#2b91af">String</span> numSecu = <span style="color:#a31515">&quot;254104940426058&quot;</span>;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#2b91af">IQuery</span> query = session.CreateQuery(<span style="color:#a31515">@&quot;select e from Employe e where e.SS=:numSecu&quot;</span>);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#2b91af">Employe</span> employe = query.SetString(<span style="color:#a31515">&quot;numSecu&quot;</span>, numSecu).UniqueResult&lt;<span style="color:#2b91af">Employe</span>&gt;();</span></span>
@@ -2363,7 +2343,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">              <span style="color:#2b91af">Console</span>.WriteLine(<span style="color:#a31515">&quot;Employe[&quot;</span> + numSecu + <span style="color:#a31515">&quot;] non trouvé...&quot;</span>);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            // se confirma la transacción</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // confirmar transacción</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            transaction.Commit();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
@@ -2382,32 +2362,30 @@
 </ul>
 
 <p><u><strong>Pantalla obtenida</strong></u>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>Recherche d&#39;un employé -------------------------------------
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>Employe[254104940426058]=[254104940426058|Jouveinal|Marie|5 rue des oiseaux|St Corentin|49203|[2|2,1|2,1|3,1|15]]
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>Employe[xx] non trouvé...
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>Recherche d&#39;un employé -------------------------------------
+<a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>Employe[254104940426058]=[254104940426058|Jouveinal|Marie|5 rue des oiseaux|St Corentin|49203|[2|2,1|2,1|3,1|15]]
+<a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a>Employe[xx] non trouvé...
 </code></pre></div>
 <p><span id="refheading1883581168461456" name="refheading1883581168461456" class="odt-bookmark-anchor"></span></p>
 <h3 id="654-insercion-de-entidades-no-validas">6.5.4. <span style="color: #4f81bd">Inserción de entidades no válidas</span></h3>
 <p>El siguiente método intenta guardar una entidad [Employe] no inicializada.</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line"><span class="odt-code-line-content">// propiedades automáticas</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// SaveEmptyEmployee</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> SaveEmptyEmployee() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">try</span> {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        // constructores</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // inicio de sesión </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">using</span> (<span style="color:#2b91af">ISession</span> session = sessionFactory.OpenSession()) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          // ToString</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // inicio de transacción</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">using</span> (<span style="color:#2b91af">ITransaction</span> transaction = session.BeginTransaction()) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            // CreateIndemnites1</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // se crea un empleado vacío</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#2b91af">Employe</span> e = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Employe</span>();</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            // inicio de sesión </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // se crea una indemnización inexistente</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#2b91af">Indemnites</span> i = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Indemnites</span>() { Id = 0, Indice = 3, BaseHeure = 1.93, EntretienJour = 2, RepasJour = 3, IndemnitesCp = 12 };</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            // inicio de transacción</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // que se asocia al empleado</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            e.Indemnites = i;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            // se crean dos indemnizaciones con el mismo índice</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // se guarda el empleado dejando vacíos los demás campos</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            session.Save(e);</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            // se guardan</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // se confirma la transacción</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            transaction.Commit();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
@@ -2419,10 +2397,10 @@
 
 <p><u><strong>Explicaciones</strong></u></p>
 <p>Recordemos el código de la clase [Employe]:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span> PamNHibernateDemos {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Employe</span> {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        // confirmación de la transacción</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // propiedades automáticas</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">virtual</span> <span style="color:#0000ff">int</span> Id { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">virtual</span> <span style="color:#0000ff">int</span> Version { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">virtual</span> <span style="color:#0000ff">string</span> SS { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span></span>
@@ -2433,11 +2411,11 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">virtual</span> <span style="color:#0000ff">string</span> CodePostal { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">virtual</span> <span style="color:#2b91af">Indemnites</span> Indemnites { <span style="color:#0000ff">get</span>; <span style="color:#0000ff">set</span>; }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        //------------- eliminación de empleados</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // constructores</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">public</span> Employe() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        //------------- eliminación de indemnizaciones</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // ToString</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">override</span> <span style="color:#0000ff">string</span> ToString() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">return</span> <span style="color:#0000ff">string</span>.Format(<span style="color:#a31515">&quot;[{0}|{1}|{2}|{3}|{4}|{5}|{6}]&quot;</span>, SS, Nom, Prenom, Adresse, Ville, CodePostal, Indemnites);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
@@ -2445,29 +2423,29 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>Un objeto [Employe] no inicializado tendrá el valor <strong>nulo</strong> en todos sus campos de tipo <strong>string</strong>. Al insertar el registro en la tabla [employes], NHibernate dejará vacías las columnas correspondientes a estos campos. Sin embargo, en la tabla [employes], todas las columnas tienen el atributo <strong>not null</strong>, lo que impide que haya columnas sin valor. El controlador ADO.NET lanzará entonces una excepción:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-74-1">1</a></span>
-<span class="normal"><a href="#__codelineno-74-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-74-1" name="__codelineno-74-1"></a><span class="n">sauvegarde</span><span class="w"> </span><span class="n">d</span><span class="s1">&#39;un employé vide -------------------------------------</span>
-<a id="__codelineno-74-2" name="__codelineno-74-2"></a><span class="s1">L&#39;</span><span class="k">exception</span><span class="w"> </span><span class="n">suivante</span><span class="w"> </span><span class="n">s</span><span class="err">&#39;</span><span class="n">est</span><span class="w"> </span><span class="n">produite</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">could</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">insert</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">PamNHibernateDemos</span><span class="p">.</span><span class="n">Employe</span><span class="p">][</span><span class="k">SQL</span><span class="p">:</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">EMPLOYES</span><span class="w"> </span><span class="p">(</span><span class="k">VERSION</span><span class="p">,</span><span class="w"> </span><span class="n">SS</span><span class="p">,</span><span class="w"> </span><span class="n">NOM</span><span class="p">,</span><span class="w"> </span><span class="n">PRENOM</span><span class="p">,</span><span class="w"> </span><span class="n">ADRESSE</span><span class="p">,</span><span class="w"> </span><span class="n">VILLE</span><span class="p">,</span><span class="w"> </span><span class="n">CP</span><span class="p">,</span><span class="w"> </span><span class="n">INDEMNITE_ID</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">)]</span>
+<p>Un objeto [Employe] no inicializado tendrá el valor <strong>nulo</strong> en todos sus campos de tipo <strong>string</strong>. Al insertar el registro en la tabla [employes], NHibernate dejará vacías las columnas correspondientes a estos campos. Sin embargo, en la tabla [employes], todas las columnas tienen el atributo <strong>not nulo</strong>, lo que impide que haya columnas sin valor. El controlador ADO.NET lanzará entonces una excepción:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-52-1">1</a></span>
+<span class="normal"><a href="#__codelineno-52-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1"></a><span class="n">sauvegarde</span><span class="w"> </span><span class="n">d</span><span class="s1">&#39;un employé vide -------------------------------------</span>
+<a id="__codelineno-52-2" name="__codelineno-52-2"></a><span class="s1">L&#39;</span><span class="k">exception</span><span class="w"> </span><span class="n">suivante</span><span class="w"> </span><span class="n">s</span><span class="err">&#39;</span><span class="n">est</span><span class="w"> </span><span class="n">produite</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">could</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">insert</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">PamNHibernateDemos</span><span class="p">.</span><span class="n">Employe</span><span class="p">][</span><span class="k">SQL</span><span class="p">:</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">EMPLOYES</span><span class="w"> </span><span class="p">(</span><span class="k">VERSION</span><span class="p">,</span><span class="w"> </span><span class="n">SS</span><span class="p">,</span><span class="w"> </span><span class="n">NOM</span><span class="p">,</span><span class="w"> </span><span class="n">PRENOM</span><span class="p">,</span><span class="w"> </span><span class="n">ADRESSE</span><span class="p">,</span><span class="w"> </span><span class="n">VILLE</span><span class="p">,</span><span class="w"> </span><span class="n">CP</span><span class="p">,</span><span class="w"> </span><span class="n">INDEMNITE_ID</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">)]</span>
 </code></pre></div></td></tr></table></div>
 <p><span id="refheading1883601168461456" name="refheading1883601168461456" class="odt-bookmark-anchor"></span></p>
 <h3 id="655-creacion-de-dos-indemnizaciones-con-el-mismo-indice-dentro-de-una-transaccion">6.5.5. <span style="color: #4f81bd">Creación de dos indemnizaciones con el mismo índice dentro de una transacción</span></h3>
 <p>En la tabla [indemnites], la columna [indice] se ha declarado con el atributo <strong>único</strong>, lo que impide tener dos filas con el mismo índice. El siguiente método crea dos indemnizaciones con el mismo índice dentro de una transacción:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line"><span class="odt-code-line-content">//------------- eliminación de las tasas de cotisations</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// CreateIndemnites1</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> CreateIndemnites1() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">try</span> {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        //------------- lista de empleados</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // inicio de sesión </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">using</span> (<span style="color:#2b91af">ISession</span> session = sessionFactory.OpenSession()) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          //------------- lista de indemnizaciones</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // inicio de transacción</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">using</span> (<span style="color:#2b91af">ITransaction</span> transaction = session.BeginTransaction()) {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            //------------- tabla de tarifas de cotisations</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // se crean dos indemnizaciones con el mismo índice</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#2b91af">Indemnites</span> i1 = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Indemnites</span>() { Id = 0, Indice = 1, BaseHeure = 1.93, EntretienJour = 2, RepasJour = 3, IndemnitesCp = 12 };</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#2b91af">Indemnites</span> i2 = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Indemnites</span>() { Id = 0, Indice = 1, BaseHeure = 1.93, EntretienJour = 2, RepasJour = 3, IndemnitesCp = 12 };</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            // CreateIndemnites2</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // se guardan</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            session.Save(i1);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            session.Save(i2);</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            // inicio de sesión </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // confirmar transacción</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            transaction.Commit();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
@@ -2486,41 +2464,41 @@
 </ul>
 
 <p>El resultado obtenido es el siguiente:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-75-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-75-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-75-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-75-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-75-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-75-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-75-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-75-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-75-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-75-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-75-1" name="__codelineno-75-1"></a><span class="n">Effacement</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="c1">-------------------------------------</span>
-<a id="__codelineno-75-2" name="__codelineno-75-2"></a><span class="c1">-- se crean dos indemnizaciones con el mismo índice</span>
-<a id="__codelineno-75-3" name="__codelineno-75-3"></a><span class="c1">-- se guardan</span>
-<a id="__codelineno-75-4" name="__codelineno-75-4"></a><span class="c1">--------------- lista de empleados</span>
-<a id="__codelineno-75-5" name="__codelineno-75-5"></a><span class="n">Création</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">deux</span><span class="w"> </span><span class="n">indemnités</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">même</span><span class="w"> </span><span class="n">indice</span><span class="w"> </span><span class="n">dans</span><span class="w"> </span><span class="n">une</span><span class="w"> </span><span class="k">transaction</span><span class="w"> </span><span class="c1">--------------</span>
-<a id="__codelineno-75-6" name="__codelineno-75-6"></a><span class="n">L</span><span class="s1">&#39;exception suivante s&#39;</span><span class="n">est</span><span class="w"> </span><span class="n">produite</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">could</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">insert</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">PamNHibernateDemos</span><span class="p">.</span><span class="n">Indemnites</span><span class="p">][</span><span class="k">SQL</span><span class="p">:</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">INDEMNITES</span><span class="w"> </span><span class="p">(</span><span class="k">VERSION</span><span class="p">,</span><span class="w"> </span><span class="n">INDICE</span><span class="p">,</span><span class="w"> </span><span class="n">BASE_HEURE</span><span class="p">,</span><span class="w"> </span><span class="n">ENTRETIEN_JOUR</span><span class="p">,</span><span class="w"> </span><span class="n">REPAS_JOUR</span><span class="p">,</span><span class="w"> </span><span class="n">INDEMNITES_CP</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">)]</span>
-<a id="__codelineno-75-7" name="__codelineno-75-7"></a><span class="n">Affichage</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="c1">-------------------------------------</span>
-<a id="__codelineno-75-8" name="__codelineno-75-8"></a><span class="c1">--------------- lista de indemnizaciones</span>
-<a id="__codelineno-75-9" name="__codelineno-75-9"></a><span class="c1">--------------- tabla de tarifas de cotisations</span>
-<a id="__codelineno-75-10" name="__codelineno-75-10"></a><span class="c1">-- propiedades automáticas</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-53-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-53-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-53-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-53-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-53-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-53-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-53-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-53-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-53-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-53-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1"></a><span class="n">Effacement</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="c1">-------------------------------------</span>
+<a id="__codelineno-53-2" name="__codelineno-53-2"></a><span class="c1">--------------- eliminación de empleados</span>
+<a id="__codelineno-53-3" name="__codelineno-53-3"></a><span class="c1">--------------- eliminación de indemnizaciones</span>
+<a id="__codelineno-53-4" name="__codelineno-53-4"></a><span class="c1">--------------- eliminación de las tasas de cotisations</span>
+<a id="__codelineno-53-5" name="__codelineno-53-5"></a><span class="n">Création</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">deux</span><span class="w"> </span><span class="n">indemnités</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">même</span><span class="w"> </span><span class="n">indice</span><span class="w"> </span><span class="n">dans</span><span class="w"> </span><span class="n">une</span><span class="w"> </span><span class="k">transaction</span><span class="w"> </span><span class="c1">--------------</span>
+<a id="__codelineno-53-6" name="__codelineno-53-6"></a><span class="n">L</span><span class="s1">&#39;exception suivante s&#39;</span><span class="n">est</span><span class="w"> </span><span class="n">produite</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">could</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">insert</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">PamNHibernateDemos</span><span class="p">.</span><span class="n">Indemnites</span><span class="p">][</span><span class="k">SQL</span><span class="p">:</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">INDEMNITES</span><span class="w"> </span><span class="p">(</span><span class="k">VERSION</span><span class="p">,</span><span class="w"> </span><span class="n">INDICE</span><span class="p">,</span><span class="w"> </span><span class="n">BASE_HEURE</span><span class="p">,</span><span class="w"> </span><span class="n">ENTRETIEN_JOUR</span><span class="p">,</span><span class="w"> </span><span class="n">REPAS_JOUR</span><span class="p">,</span><span class="w"> </span><span class="n">INDEMNITES_CP</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">)]</span>
+<a id="__codelineno-53-7" name="__codelineno-53-7"></a><span class="n">Affichage</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="c1">-------------------------------------</span>
+<a id="__codelineno-53-8" name="__codelineno-53-8"></a><span class="c1">--------------- lista de empleados</span>
+<a id="__codelineno-53-9" name="__codelineno-53-9"></a><span class="c1">--------------- lista de indemnizaciones</span>
+<a id="__codelineno-53-10" name="__codelineno-53-10"></a><span class="c1">--------------- tabla de tarifas de cotisations</span>
 </code></pre></div></td></tr></table></div>
 <p>En la línea 9, se puede ver que la tabla [indemnites] está vacía. No se ha producido ninguna inserción.</p>
 <p><span id="refheading1883621168461456" name="refheading1883621168461456" class="odt-bookmark-anchor"></span></p>
 <h3 id="656-creacion-de-dos-indemnizaciones-del-mismo-indice-fuera-de-la-transaccion">6.5.6. <span style="color: #4f81bd">Creación de dos indemnizaciones del mismo índice fuera de la transacción</span></h3>
 <p>El siguiente método crea dos indemnizaciones con el mismo índice sin utilizar ninguna transacción:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line"><span class="odt-code-line-content">// constructores</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// CreateIndemnites2</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">static</span> <span style="color:#0000ff">void</span> CreateIndemnites2() {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">try</span> {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        // ToString</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // inicio de sesión </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">using</span> (<span style="color:#2b91af">ISession</span> session = sessionFactory.OpenSession()) {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          // el código de error </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // se crean dos indemnizaciones con el mismo índice</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#2b91af">Indemnites</span> i1 = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Indemnites</span>() { Id = 0, Indice = 1, BaseHeure = 1.93, EntretienJour = 2, RepasJour = 3, IndemnitesCp = 12 };</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#2b91af">Indemnites</span> i2 = <span style="color:#0000ff">new</span> <span style="color:#2b91af">Indemnites</span>() { Id = 0, Indice = 1, BaseHeure = 1.94, EntretienJour = 2, RepasJour = 3, IndemnitesCp = 12 };</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">          // constructores </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">          // se guardan</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          session.Save(i1);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">          session.Save(i2);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
@@ -2539,19 +2517,19 @@
 </ul>
 
 <p>El resultado obtenido es el siguiente:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-76-1">1</a></span>
-<span class="normal"><a href="#__codelineno-76-2">2</a></span>
-<span class="normal"><a href="#__codelineno-76-3">3</a></span>
-<span class="normal"><a href="#__codelineno-76-4">4</a></span>
-<span class="normal"><a href="#__codelineno-76-5">5</a></span>
-<span class="normal"><a href="#__codelineno-76-6">6</a></span>
-<span class="normal"><a href="#__codelineno-76-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-76-1" name="__codelineno-76-1"></a><span class="n">Création</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">deux</span><span class="w"> </span><span class="n">indemnités</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">même</span><span class="w"> </span><span class="n">indice</span><span class="w"> </span><span class="n">sans</span><span class="w"> </span><span class="k">transaction</span><span class="w"> </span><span class="c1">--------------</span>
-<a id="__codelineno-76-2" name="__codelineno-76-2"></a><span class="n">L</span><span class="s1">&#39;exception suivante s&#39;</span><span class="n">est</span><span class="w"> </span><span class="n">produite</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">could</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">insert</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">PamNHibernateDemos</span><span class="p">.</span><span class="n">Indemnites</span><span class="p">][</span><span class="k">SQL</span><span class="p">:</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">INDEMNITES</span><span class="w"> </span><span class="p">(</span><span class="k">VERSION</span><span class="p">,</span><span class="w"> </span><span class="n">INDICE</span><span class="p">,</span><span class="w"> </span><span class="n">BASE_HEURE</span><span class="p">,</span><span class="w"> </span><span class="n">ENTRETIEN_JOUR</span><span class="p">,</span><span class="w"> </span><span class="n">REPAS_JOUR</span><span class="p">,</span><span class="w"> </span><span class="n">INDEMNITES_CP</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">)]</span>
-<a id="__codelineno-76-3" name="__codelineno-76-3"></a><span class="n">Affichage</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="c1">-------------------------------------</span>
-<a id="__codelineno-76-4" name="__codelineno-76-4"></a><span class="c1">-- encapsulamos la excepción</span>
-<a id="__codelineno-76-5" name="__codelineno-76-5"></a><span class="c1">-- lista de todas las identidades de los empleados </span>
-<a id="__codelineno-76-6" name="__codelineno-76-6"></a><span class="p">[</span><span class="mi">1</span><span class="o">|</span><span class="mi">1</span><span class="p">,</span><span class="mi">93</span><span class="o">|</span><span class="mi">2</span><span class="o">|</span><span class="mi">3</span><span class="o">|</span><span class="mi">12</span><span class="p">]</span>
-<a id="__codelineno-76-7" name="__codelineno-76-7"></a><span class="c1">-- un empleado concreto con sus prestaciones </span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-54-1">1</a></span>
+<span class="normal"><a href="#__codelineno-54-2">2</a></span>
+<span class="normal"><a href="#__codelineno-54-3">3</a></span>
+<span class="normal"><a href="#__codelineno-54-4">4</a></span>
+<span class="normal"><a href="#__codelineno-54-5">5</a></span>
+<span class="normal"><a href="#__codelineno-54-6">6</a></span>
+<span class="normal"><a href="#__codelineno-54-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1"></a><span class="n">Création</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">deux</span><span class="w"> </span><span class="n">indemnités</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">même</span><span class="w"> </span><span class="n">indice</span><span class="w"> </span><span class="n">sans</span><span class="w"> </span><span class="k">transaction</span><span class="w"> </span><span class="c1">--------------</span>
+<a id="__codelineno-54-2" name="__codelineno-54-2"></a><span class="n">L</span><span class="s1">&#39;exception suivante s&#39;</span><span class="n">est</span><span class="w"> </span><span class="n">produite</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">could</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">insert</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">PamNHibernateDemos</span><span class="p">.</span><span class="n">Indemnites</span><span class="p">][</span><span class="k">SQL</span><span class="p">:</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">INDEMNITES</span><span class="w"> </span><span class="p">(</span><span class="k">VERSION</span><span class="p">,</span><span class="w"> </span><span class="n">INDICE</span><span class="p">,</span><span class="w"> </span><span class="n">BASE_HEURE</span><span class="p">,</span><span class="w"> </span><span class="n">ENTRETIEN_JOUR</span><span class="p">,</span><span class="w"> </span><span class="n">REPAS_JOUR</span><span class="p">,</span><span class="w"> </span><span class="n">INDEMNITES_CP</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="o">?</span><span class="p">)]</span>
+<a id="__codelineno-54-3" name="__codelineno-54-3"></a><span class="n">Affichage</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="c1">-------------------------------------</span>
+<a id="__codelineno-54-4" name="__codelineno-54-4"></a><span class="c1">--------------- lista de empleados</span>
+<a id="__codelineno-54-5" name="__codelineno-54-5"></a><span class="c1">--------------- lista de indemnizaciones</span>
+<a id="__codelineno-54-6" name="__codelineno-54-6"></a><span class="p">[</span><span class="mi">1</span><span class="o">|</span><span class="mi">1</span><span class="p">,</span><span class="mi">93</span><span class="o">|</span><span class="mi">2</span><span class="o">|</span><span class="mi">3</span><span class="o">|</span><span class="mi">12</span><span class="p">]</span>
+<a id="__codelineno-54-7" name="__codelineno-54-7"></a><span class="c1">--------------- tabla de tarifas de cotisations</span>
 </code></pre></div></td></tr></table></div>
 <p>La base estaba vacía antes de la ejecución del método. En la línea 6, se puede ver que la tabla [indemnites] tiene una fila.</p>
 

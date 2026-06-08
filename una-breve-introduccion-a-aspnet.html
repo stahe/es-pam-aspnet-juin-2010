@@ -464,10 +464,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#24-gestion-de-datos-de-ambito-de-la-aplicacion" class="md-nav__link">
+  <a href="#24-gestion-de-los-datos-de-ambito-de-la-aplicacion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.4. Gestión de datos de ámbito de la aplicación
+        2.4. Gestión de los datos de ámbito de la aplicación
       
     </span>
   </a>
@@ -932,7 +932,7 @@
 </ul>
 
 <h3 id="212-la-pagina-defaultaspx">2.1.2. <span style="color: #4f81bd">La página [Default.aspx]</span></h3>
-<p>Si se ejecuta el proyecto mediante [Ctrl-F5], se muestra la página [Default.aspx] en un navegador:</p>
+<p>Si se ejecuta el proyecto mediante [Ctrl-F5], la página [Default.aspx] se muestra en un navegador:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005A500000116D4CCECC4.png" width="680" height="131" style="display:inline-block; margin:4px;width:17.997cm;height:3.461cm;" class="odt-zoomable" data-zoom-src="images/10000000000005A500000116D4CCECC4.png" /></td></tr></table>
 
 <ul>
@@ -1228,7 +1228,7 @@
   </li>
 </ul>
 
-<p>En respuesta al POST, se obtiene la página [4]. Vuelve a ser la página [Default.aspx]. Este es el comportamiento normal, a menos que haya una transferencia o redireccionamiento de página por parte de los gestores de eventos de la página. Se puede ver que se han producido dos nuevos eventos:</p>
+<p>En respuesta al POST, se obtiene la página [4]. Vuelve a ser la página [Default.aspx]. Este es el comportamiento normal, a menos que haya una transferencia o redirección de página por parte de los gestores de eventos de la página. Se puede ver que se han producido dos nuevos eventos:</p>
 <ul>
   <li>el evento <i>Page_Load, </i>que se produjo al cargar la página
   </li>
@@ -1256,7 +1256,7 @@
 <ul>
   <li>El evento <i>ButtonValider_Click </i>se produjo después del evento <i>Page_Load</i>. Por lo tanto, es este gestor el que puede tomar la decisión de transferir o redirigir a una página P2.
   </li>
-  <li>La lista de eventos [4] conservó los dos eventos mostrados durante la carga inicial GET de la página [Default.aspx]. Esto resulta sorprendente si se tiene en cuenta que la página [Default.aspx] se recreó durante el POST. Deberíamos encontrar la página [Default.aspx] con sus valores de diseño y, por lo tanto, un <i>ListBox </i>vacío. La ejecución de los gestores <i>Page_Load </i>y <i>ButtonValider_Click </i>debería añadir a continuación dos mensajes. Sin embargo, se encuentran cuatro. El mecanismo de <b>VIEWSTATE </b>explica esto. Durante el GET inicial, el servidor web envía la página [Default.aspx] con una etiqueta HTML <i>&lt;input type=&quot;hidden&quot; ...&gt; </i>denominada <b>campo oculto </b>(línea 10 a continuación).
+  <li>La lista de eventos [4] conservó los dos eventos mostrados durante la carga inicial GET de la página [Default.aspx]. Esto resulta sorprendente si se tiene en cuenta que la página [Default.aspx] se recreó durante el POST. Deberíamos encontrar la página [Default.aspx] con sus valores de diseño y, por lo tanto, un <i>ListBox </i>vacío. La ejecución de los gestores <i>Page_Load </i>y <i>ButtonValider_Click </i>debería colocar allí dos mensajes. Sin embargo, se encuentran cuatro. El mecanismo de <b>VIEWSTATE </b>explica esto. Durante el GET inicial, el servidor web envía la página [Default.aspx] con una etiqueta HTML <i>&lt;input type=&quot;hidden&quot; ...&gt; </i>denominada <b>campo oculto </b>(línea 10 a continuación).
   </li>
 </ul>
 
@@ -1333,7 +1333,7 @@
   </li>
   <li>en [6], el resultado devuelto tras hacer clic en el botón [Valider]
   </li>
-  <li>El mecanismo de VIEWSTATE activado explica que TextBox y [7] hayan conservado su valor registrado en [4]
+  <li>el mecanismo del VIEWSTATE activado explica que los TextBox y [7] hayan conservado su valor publicado en [4]
   </li>
   <li>el mecanismo desactivado del VIEWSTATE explica que el componente [ListBoxEvts] [8] no haya conservado su contenido [5].
   </li>
@@ -1367,7 +1367,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> Page_Load(<span style="color:#0000ff">object</span> sender, <span style="color:#2b91af">EventArgs</span> e)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      // se anota el evento</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      // se registra el evento</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      ListBoxEvts.Items.Insert(0, <span style="color:#0000ff">string</span>.Format(<span style="color:#a31515">&quot;{0}: Page_Load&quot;</span>, <span style="color:#2b91af">DateTime</span>.Now.ToString(<span style="color:#a31515">&quot;hh:mm:ss&quot;</span>)));</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
@@ -1386,7 +1386,7 @@
 <ul>
   <li><i>LabelPost </i>es de tipo [System.Web.UI.WebControls.Label] (véase Default.aspx.designer.cs). Su propiedad <i>Text </i>representa el texto que muestra el componente.
   </li>
-  <li><i>TextBoxNom </i>y <i>TextBoxAge </i>son del tipo [System.Web.UI.WebControls.TextBox]. La propiedad <i>Text </i>de un componente <i>TextBox </i>es el texto que se muestra en el campo de entrada.
+  <li><i>TextBoxNom </i>y <i>TextBoxAge </i>son de tipo [System.Web.UI.WebControls.TextBox]. La propiedad <i>Text </i>de un componente <i>TextBox </i>es el texto que se muestra en el campo de entrada.
   </li>
   <li>El método <i>Trim() </i>elimina los espacios que pueden preceder o seguir a una cadena de caracteres
   </li>
@@ -1500,13 +1500,7 @@
 <p>Vamos a presentar los dos tipos de validadores a través de sus etiquetas en el código de la página [Default.aspx]:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">RequiredFieldValidator</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;RequiredFieldValidatorNom&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;</span> </span></span>
-</code></pre></div>
-
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#ff0000">ControlToValidate</span><span style="color:#0000ff">=&quot;TextBoxNom&quot;</span> <span style="color:#ff0000">Display</span><span style="color:#0000ff">=&quot;Dynamic&quot;</span> </span></span>
-</code></pre></div>
-
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#ff0000">ErrorMessage</span><span style="color:#0000ff">=&quot;Donnée obligatoire !&quot;&gt;&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">RequiredFieldValidator</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
@@ -1531,24 +1525,15 @@
 
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">          <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">RangeValidator</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;RangeValidatorAge&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;</span> </span></span>
-</code></pre></div>
-
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#ff0000">ControlToValidate</span><span style="color:#0000ff">=&quot;TextBoxAge&quot;</span> <span style="color:#ff0000">Display</span><span style="color:#0000ff">=&quot;Dynamic&quot;</span> </span></span>
-</code></pre></div>
-
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#ff0000">ErrorMessage</span><span style="color:#0000ff">=&quot;Tapez un nombre entre 1 et 150 !&quot;</span> <span style="color:#ff0000">MaximumValue</span><span style="color:#0000ff">=&quot;150&quot;</span> </span></span>
-</code></pre></div>
-
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#ff0000">MinimumValue</span><span style="color:#0000ff">=&quot;1&quot;</span> <span style="color:#ff0000">Type</span><span style="color:#0000ff">=&quot;Integer&quot;&gt;&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">RangeValidator</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
 <ul>
   <li><b>Tipo</b>: el tipo de los datos verificados. En este caso, la edad es un número entero.
   </li>
-  <li><b>MinimumValue</b>, <b>MaximumValue</b>: los límites entre los que debe estar el valor verificado
+  <li><b>MinimumValue</b>, <b>MaximumValue</b>: los límites entre los que debe encontrarse el valor verificado
   </li>
 </ul>
 
@@ -1602,7 +1587,7 @@
 
 <p>En el caso de que el botón [Valider] tenga su atributo <em>CausesValidation</em> en <em>«True»</em> y los validadores tengan su atributo <em>EnableClientScript</em> en <em>«True»</em>, el método <em>ButtonValider_Click</em> solo se ejecuta cuando los valores enviados son válidos. Cabe preguntarse entonces cuál es el sentido del código que se encuentra a partir de la línea 8. Hay que recordar que siempre es posible escribir un cliente programado que envíe valores no verificados a la página [Default.aspx]. Por lo tanto, esta debe volver a realizar siempre las pruebas de validez.</p>
 <ul>
-  <li>línea 8: inicia la ejecución de todos los validadores de la página. En caso de que el botón [Valider] tenga su atributo <i>CausesValidation </i>en <i>True</i>, esto se hace automáticamente y no es necesario volver a hacerlo. Aquí hay redundancia.
+  <li>Línea 8: inicia la ejecución de todos los validadores de la página. En caso de que el botón [Valider] tenga su atributo <i>CausesValidation </i>en <i>True</i>, esto se hace automáticamente y no es necesario volver a hacerlo. Aquí hay redundancia.
   </li>
   <li>líneas 9-15: caso en el que uno de los validadores ha fallado
   </li>
@@ -1644,7 +1629,7 @@
   </li>
 </ul>
 
-<h2 id="24-gestion-de-datos-de-ambito-de-la-aplicacion">2.4. <span style="color: #4f81bd">Gestión de datos de ámbito de la aplicación</span></h2>
+<h2 id="24-gestion-de-los-datos-de-ambito-de-la-aplicacion">2.4. <span style="color: #4f81bd">Gestión de los datos de ámbito de la aplicación</span></h2>
 <p>Volvamos a la arquitectura de ejecución de una página ASPX:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003F70000011845ED25E5.png" width="508" height="140" style="display:inline-block; margin:4px;width:13.428cm;height:3.704cm;" class="odt-zoomable" data-zoom-src="images/10000000000003F70000011845ED25E5.png" /></td></tr></table>
 
@@ -1781,97 +1766,35 @@
 <p>El método [Application_Start] se utiliza a menudo para inicializar la aplicación a partir de la información contenida en [Web.Config]. El generado al crear inicialmente un proyecto tiene el siguiente aspecto:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;?</span><span style="color:#a31515">xml</span><span style="color:#0000ff"> </span><span style="color:#ff0000">version</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">1.0</span>&quot;<span style="color:#0000ff"> </span><span style="color:#ff0000">encoding</span><span style="color:#0000ff">=</span>&quot;<span style="color:#0000ff">utf-8</span>&quot;<span style="color:#0000ff">?&gt;</span></span></span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>
-</code></pre></div>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">configuration</span><span style="color:#0000ff">&gt;</span></span></span>
-</code></pre></div>
-
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">configSections</span><span style="color:#0000ff">&gt;</span></span></span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>...
-</code></pre></div>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;/</span><span style="color:#a31515">configSections</span><span style="color:#0000ff">&gt;  </span></span></span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>
-</code></pre></div>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">  </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">appSettings</span><span style="color:#0000ff">/&gt;</span></span></span>
-</code></pre></div>
-
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">connectionStrings</span><span style="color:#0000ff">/&gt;</span></span></span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>
-</code></pre></div>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">  </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">system.web</span><span style="color:#0000ff">&gt;</span></span></span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>...
-</code></pre></div>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;/</span><span style="color:#a31515">system.web</span><span style="color:#0000ff">&gt;</span></span></span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>
-</code></pre></div>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">system.codedom</span><span style="color:#0000ff">&gt;</span></span></span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>....
-</code></pre></div>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">....</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;/</span><span style="color:#a31515">system.codedom</span><span style="color:#0000ff">&gt;</span></span></span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>
-</code></pre></div>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">    </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">&lt;!-- </span></span></span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>        La section system.webServer est requise pour exécuter ASP.NET AJAX sur Internet
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>        Information Services 7.0.  Elle n&#39;est pas nécessaire pour les versions précédentes d&#39;IIS.
-</code></pre></div>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">        La section system.webServer est requise pour exécuter ASP.NET AJAX sur Internet</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        Information Services 7.0.  Elle n&#x27;est pas nécessaire pour les versions précédentes d&#x27;IIS.</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">--&gt;</span></span></span>
-</code></pre></div>
-
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">system.webServer</span><span style="color:#0000ff">&gt;</span></span></span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>...
-</code></pre></div>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;/</span><span style="color:#a31515">system.webServer</span><span style="color:#0000ff">&gt;</span></span></span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>
-</code></pre></div>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;</span><span style="color:#a31515">runtime</span><span style="color:#0000ff">&gt;</span></span></span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>....
-</code></pre></div>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">....</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">    &lt;/</span><span style="color:#a31515">runtime</span><span style="color:#0000ff">&gt;</span></span></span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>
-</code></pre></div>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;/</span><span style="color:#a31515">configuration</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
@@ -1975,7 +1898,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000505000002CD5882CA3D.png" width="643" height="359" style="display:inline-block; margin:4px;width:17cm;height:9.486cm;" class="odt-zoomable" data-zoom-src="images/1000000000000505000002CD5882CA3D.png" /></td></tr></table>
 
 <p>Arriba vemos que los parámetros de [web.config] se han recuperado correctamente. La clase global de la aplicación es el lugar adecuado para almacenar información compartida por todos los usuarios.</p>
-<h2 id="25-gestion-de-datos-de-ambito-de-sesion">2.5. <span style="color: #4f81bd">Gestión de datos de ámbito de sesión</span></h2>
+<h2 id="25-gestion-de-datos-de-ambito-de-sesion">2.5. <span style="color: #4f81bd"><strong>Gestión de datos de ámbito de sesión</strong></span></h2>
 <p>Aquí nos interesa cómo almacenar información a lo largo de las solicitudes de un usuario determinado:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000594000001432367D351.png" width="680" height="154" style="display:inline-block; margin:4px;width:17.997cm;height:4.071cm;" class="odt-zoomable" data-zoom-src="images/1000000000000594000001432367D351.png" /></td></tr></table>
 
@@ -1990,7 +1913,7 @@
 
 <p>El mecanismo de la sesión se implementa de la siguiente manera:</p>
 <ul>
-  <li>en la primera solicitud de un usuario, el servidor web crea un token de sesión que le asigna al usuario. Este token es una secuencia de caracteres única para cada usuario. El servidor lo envía en la respuesta a la primera solicitud del usuario.
+  <li>en la primera solicitud de un usuario, el servidor web crea un token de sesión que asigna al usuario. Este token es una secuencia de caracteres única para cada usuario. El servidor lo envía en la respuesta a la primera solicitud del usuario.
   </li>
   <li>En las solicitudes siguientes, el usuario (el navegador web) incluye en su solicitud el token de sesión que se le ha asignado. De este modo, el servidor web es capaz de reconocerlo.
   </li>
@@ -2097,15 +2020,15 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Nombre</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Tipo</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Función</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Elementos</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">P</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">la colección de tipo <i>ListItemCollection </i>de los elementos de tipo <i>ListItem </i>de la lista desplegable</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>SelectedIndex</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">P</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">el índice, que comienza en 0, del elemento seleccionado en la lista desplegable cuando se envía el formulario</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>SelectedItem</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">P</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">el elemento de tipo <i>ListItem </i>seleccionado en la lista desplegable cuando se envía el formulario</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>SelectedValue</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">P</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">el valor de tipo <i>string </i>del elemento de tipo <i>ListItem </i>seleccionado en la lista desplegable cuando se envía el formulario. Definiremos este concepto de valor más adelante.</div></td></tr></table>
 
 <p>La clase <strong>ListItem</strong> de los elementos de una lista desplegable sirve para generar las etiquetas <em>&lt;option&gt;</em> de la etiqueta HTML <em>&lt;select&gt;</em>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
-<span class="normal"><a href="#__codelineno-15-2">2</a></span>
-<span class="normal"><a href="#__codelineno-15-3">3</a></span>
-<span class="normal"><a href="#__codelineno-15-4">4</a></span>
-<span class="normal"><a href="#__codelineno-15-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="o">&lt;</span><span class="k">select</span><span class="w"> </span><span class="p">....</span><span class="o">&gt;</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="w">    </span><span class="o">&lt;</span><span class="k">option</span><span class="w"> </span><span class="n">value</span><span class="o">=</span><span class="ss">&quot;val1&quot;</span><span class="o">&gt;</span><span class="n">texte1</span><span class="o">&lt;/</span><span class="k">option</span><span class="o">&gt;</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">    </span><span class="o">&lt;</span><span class="k">option</span><span class="w"> </span><span class="n">value</span><span class="o">=</span><span class="ss">&quot;val2&quot;</span><span class="o">&gt;</span><span class="n">texte2</span><span class="o">&lt;/</span><span class="k">option</span><span class="o">&gt;</span>
-<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="p">....</span>
-<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="o">&lt;/</span><span class="k">select</span><span class="o">&gt;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="o">&lt;</span><span class="k">select</span><span class="w"> </span><span class="p">....</span><span class="o">&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="o">&lt;</span><span class="k">option</span><span class="w"> </span><span class="n">value</span><span class="o">=</span><span class="ss">&quot;val1&quot;</span><span class="o">&gt;</span><span class="n">texte1</span><span class="o">&lt;/</span><span class="k">option</span><span class="o">&gt;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="o">&lt;</span><span class="k">option</span><span class="w"> </span><span class="n">value</span><span class="o">=</span><span class="ss">&quot;val2&quot;</span><span class="o">&gt;</span><span class="n">texte2</span><span class="o">&lt;/</span><span class="k">option</span><span class="o">&gt;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="p">....</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="o">&lt;/</span><span class="k">select</span><span class="o">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <p>En la etiqueta &lt;<em>option</em>&gt;</p>
 <ul>
@@ -2171,40 +2094,40 @@
 
 <p>Para comprender la interacción entre el VIEWSTATE de la lista <em>DropDownListNoms</em> y la prueba <em>if (! IsPostBack)</em> del gestor <em>Page_Load</em> de [Default.aspx], se invita al lector a repetir la prueba anterior con las siguientes configuraciones:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Caso</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>DropDownListNoms.EnableViewState</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>prueba if(! IsPostBack) en Page_Load de [Default.aspx]</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>1
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>1
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>true
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>true
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>présent
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>présent
 </code></pre></div>
 </div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>2
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>2
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>false
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>false
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>présent
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>présent
 </code></pre></div>
 </div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>3
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>3
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>true
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>true
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>absent
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>absent
 </code></pre></div>
 </div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>4
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>4
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>false
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>false
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>absent
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>absent
 </code></pre></div>
 </div></td></tr></table>
 
@@ -2216,7 +2139,7 @@
   </li>
   <li>la lista se rellena tanto tras el GET inicial como en los POST siguientes. Como <i>EnableViewState </i>es <i>verdadero</i>, tenemos 3 nombres tras el GET inicial, 6 nombres tras el primer POST, 9 nombres tras el segundo POST, ...
   </li>
-  <li>La lista se completa tanto tras el GET inicial como en los POST posteriores. Como <i>EnableViewState </i>es <i>incorrecto</i>, la lista se rellena con solo 3 nombres en cada solicitud, ya sea la GET inicial o las POST siguientes. Se repite el comportamiento del caso 1. Por lo tanto, hay dos formas de obtener el mismo resultado.
+  <li>La lista se completa tanto tras el GET inicial como durante los POST posteriores. Como <i>EnableViewState </i>es <i>incorrecto</i>, la lista se rellena con solo 3 nombres en cada solicitud, ya sea la GET inicial o las POST siguientes. Se repite el comportamiento del caso 1. Por lo tanto, hay dos formas de obtener el mismo resultado.
   </li>
 </ol>
 
@@ -2326,11 +2249,8 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001AD000001A0964AE26A.png" width="215" height="208" style="display:inline-block; margin:4px;width:5.676cm;height:5.503cm;" class="odt-zoomable" data-zoom-src="images/10000000000001AD000001A0964AE26A.png" /></td></tr></table>
 
 <p>El código fuente de este nuevo componente es el siguiente:</p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;LinkButtonToPage1&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;</span> <span style="color:#ff0000">CausesValidation</span><span style="color:#0000ff">=&quot;False&quot;</span> </span></span>
-</code></pre></div>
-
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;LinkButtonToPage1&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;</span> <span style="color:#ff0000">CausesValidation</span><span style="color:#0000ff">=&quot;False&quot;</span> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#ff0000">EnableViewState</span><span style="color:#0000ff">=&quot;False</span><span style="color:#0000ff">&quot; </span><span style="color:#ff0000">onclick</span><span style="color:#0000ff">=&quot;LinkButtonToPage1_Click&quot;</span><span style="color:#0000ff">&gt;</span>Forward vers Page1<span style="color:#0000ff">&lt;/</span>asp<span style="color:#0000ff">:</span>LinkButton<span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
@@ -2439,9 +2359,6 @@
 <p>En [Default.aspx], la incorporación del componente <em>LinkButton</em> generó el siguiente código fuente:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span> <span style="color:#ff0000">ID</span><span style="color:#0000ff">=&quot;LinkButtonToPage2&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;</span> </span></span>
-</code></pre></div>
-
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#ff0000">onclick</span><span style="color:#0000ff">=&quot;LinkButtonToPage2_Click&quot;&gt;</span>Redirection vers Page2<span style="color:#0000ff">&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">LinkButton</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 

@@ -879,14 +879,14 @@
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">namespace</span> pam_v5_webservice</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#808080">/// &lt;summary&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#808080">/// Description résumée de Service1</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#808080">/// &lt;/summary&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  /// &lt;summary&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  /// Descripción resumida de Servicio1</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  /// &lt;/summary&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  [<span style="color:#2b91af">WebService</span>(Namespace = <span style="color:#a31515">&quot;http://tempuri.org/&quot;</span>)]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  [<span style="color:#2b91af">WebServiceBinding</span>(ConformsTo = <span style="color:#2b91af">WsiProfiles</span>.BasicProfile1_1)]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  [System.ComponentModel.<span style="color:#2b91af">ToolboxItem</span>(<span style="color:#0000ff">false</span>)]</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#008000">// Pour autoriser l&#x27;appel de ce service Web depuis un script à l&#x27;aide d&#x27;ASP.NET AJAX, supprimez les marques de commentaire de la ligne suivante. </span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#008000">// [System.Web.Script.Services.ScriptService]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  // Para permitir la llamada a este servicio web desde un script utilizando ASP.NET AJAX, elimine los símbolos de comentario de la siguiente línea. </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  // [System.Web.Script.Services.ScriptService]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Service1</span> : System.Web.Services.<span style="color:#2b91af">WebService</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
@@ -979,7 +979,7 @@
 </code></pre></div>
 
 <ul>
-  <li>en [Service.asmx], también cambiamos el espacio de nombres utilizado para la clase [Service1] (clic derecho / mostrar marcado):
+  <li>en [Service.asmx], también cambiamos el espacio de nombres utilizado para la clase [Service1] (clic derecho / mostrar el marcado):
   </li>
 </ul>
 
@@ -1070,7 +1070,7 @@
   </li>
   <li>La clase [Global] instancia las capas [metier] y [dao] en su método [Application_Start]
   </li>
-  <li>Para mejorar el rendimiento, la clase [Global] coloca la lista simplificada de empleados en un campo interno. A partir de este campo, proporcionará la lista de empleados.
+  <li>Para mejorar el rendimiento, la clase [Global] almacena la lista simplificada de empleados en un campo interno. A partir de este campo, generará la lista de empleados.
   </li>
   <li>El servicio web se instancia con cada solicitud de un cliente. Desaparece tras haberla atendido. No se dirigirá directamente a la capa [metier], sino a la clase [Global]. Esta implementará la interfaz de la capa [metier].
   </li>
@@ -1088,25 +1088,25 @@
 <span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Global</span> : System.Web.<span style="color:#2b91af">HttpApplication</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // Container.DataItem %&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // --- datos estáticos de la aplicación ---</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#2b91af">Employe</span>[] Employes;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#2b91af">IPamMetier</span> PamMetier = <span style="color:#0000ff">null</span>;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> Application_Start(<span style="color:#0000ff">object</span> sender, <span style="color:#2b91af">EventArgs</span> e)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      // se muestran las vistas solicitadas </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      // instanciación de la capa [metier]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      PamMetier = <span style="color:#2b91af">ContextRegistry</span>.GetContext().GetObject(<span style="color:#a31515">&quot;pammetier&quot;</span>) <span style="color:#0000ff">as</span> <span style="color:#2b91af">IPamMetier</span>;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#008000">// on récupère le tableau simplifié des employés </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      // se recupera la tabla simplificada de empleados </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      Employes = PamMetier.GetAllIdentitesEmployes();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // boolVues1: true si la vista múltiple Vistas1 debe estar visible </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // lista simplificada de empleados</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">static</span> <span style="color:#0000ff">public</span> <span style="color:#2b91af">Employe</span>[] GetAllIdentitesEmployes()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> Employes;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // boolVues1: true si la vista múltiple Vistas2 debe estar visible </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // salario de un empleado</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">static</span> <span style="color:#0000ff">public</span> <span style="color:#2b91af">FeuilleSalaire</span> GetSalaire(<span style="color:#0000ff">string</span> SS, <span style="color:#0000ff">double</span> heuresTravaillées, <span style="color:#0000ff">int</span> joursTravailles)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> PamMetier.GetSalaire(SS, heuresTravaillées, joursTravailles);</span></span>
@@ -1162,14 +1162,14 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Service1</span> : System.Web.Services.<span style="color:#2b91af">WebService</span>, <span style="color:#2b91af">IPamMetier</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // índice: índice de la vista de Vues2 que se va a mostrar </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // lista de todas las identidades de los empleados </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    [<span style="color:#2b91af">WebMethod</span>]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#2b91af">Employe</span>[] GetAllIdentitesEmployes()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">return</span> <span style="color:#2b91af">Global</span>.GetAllIdentitesEmployes();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // se establecen las opciones del menú </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // ------- el cálculo del salario </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    [<span style="color:#2b91af">WebMethod</span>]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#2b91af">FeuilleSalaire</span> GetSalaire(<span style="color:#0000ff">string</span> ss, <span style="color:#0000ff">double</span> heuresTravaillees, <span style="color:#0000ff">int</span> joursTravailles)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
@@ -1341,29 +1341,29 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    [<span style="color:#2b91af">TestFixture</span>()]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">NunitTestPamMetier</span> : <span style="color:#2b91af">AssertionHelper</span> {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        // cada valor booleano se asigna a la propiedad Visible del enlace correspondiente </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // la capa [metier] que se va a probar </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">private</span> <span style="color:#2b91af">IPamMetier</span> pamMetier;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        // carga de la página </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // constructor</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">public</span> NunitTestPamMetier() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            // procesamiento de la solicitud inicial </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // instanciación de la capa [dao]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            pamMetier = <span style="color:#2b91af">ContextRegistry</span>.GetContext().GetObject(<span style="color:#a31515">&quot;pammetier&quot;</span>) <span style="color:#0000ff">as</span> <span style="color:#2b91af">IPamMetier</span>;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        [<span style="color:#2b91af">Test</span>]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">void</span> GetAllIdentitesEmployes() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            // carga de la página </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // verificación del número de empleados </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            Expect(2, EqualTo(pamMetier.GetAllIdentitesEmployes().Length));</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        [<span style="color:#2b91af">Test</span>]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">void</span> GetSalaire1() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            // procesamiento de la solicitud inicial </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // cálculo de una nómina </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#2b91af">FeuilleSalaire</span> feuilleSalaire = pamMetier.GetSalaire(<span style="color:#a31515">&quot;254104940426058&quot;</span>, 150, 20);</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            // ¿Errores de inicialización? </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // verificaciones </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            Expect(368.77, EqualTo(feuilleSalaire.ElementsSalaire.SalaireNet).Within(1E-06));</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            // Visualización de la vista [erreurs] </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // nómina de un empleado inexistente </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">bool</span> erreur = <span style="color:#0000ff">false</span>;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">try</span> {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                feuilleSalaire = pamMetier.GetSalaire(<span style="color:#a31515">&quot;xx&quot;</span>, 150, 20);</span></span>
@@ -1423,13 +1423,13 @@
 </ul>
 
 <p>Volvamos al código de instanciación de la capa local [metier] en [NUnit.cs]:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span class="odt-code-line-content">        // posicionamiento del menú </span></span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span class="odt-code-line-content">        // la capa [metier] a probar </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">private</span> <span style="color:#2b91af">IPamMetier</span> pamMetier;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        // carga de los nombres de los empleados en el combo </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // constructor</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">public</span> NunitTestPamMetier() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            // posicionamiento del menú </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // instanciación de la capa [dao]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            pamMetier = <span style="color:#2b91af">ContextRegistry</span>.GetContext().GetObject(<span style="color:#a31515">&quot;pammetier&quot;</span>) <span style="color:#0000ff">as</span> <span style="color:#2b91af">IPamMetier</span>;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
@@ -1441,13 +1441,13 @@
 </code></pre></div>
 
 <p>Vemos que la clase <em>Service1SoapClient</em> no implementa la interfaz <em>IPamMetier</em>, aunque exponga métodos con el mismo nombre. Por lo tanto, debemos escribir la instanciación de la capa local [metier] de la siguiente manera:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// visualización de la vista [saisie] </span></span></span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// la capa [metier] a probar </span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">private</span> <span style="color:#2b91af">Service1SoapClient</span> pamMetier;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        // cálculo del salario </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // constructor</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">public</span> NunitTestPamMetier() {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            // ¿página válida? </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // instanciación de la capa [metier]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            pamMetier = <span style="color:#2b91af">ContextRegistry</span>.GetContext().GetObject(<span style="color:#a31515">&quot;pammetier&quot;</span>) <span style="color:#0000ff">as</span> <span style="color:#2b91af">Service1SoapClient</span>;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
@@ -1485,17 +1485,8 @@
 <p>Por último, los espacios de nombres importados ya no son los mismos:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> System;</span></span>
-</code></pre></div>
-
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> PamV5Client.WsPam;</span></span>
-</code></pre></div>
-
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> NUnit.Framework;</span></span>
-</code></pre></div>
-
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> Spring.Context.Support;</span></span>
 </code></pre></div>
 
@@ -1518,7 +1509,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000006010000013BE03C9519.png" width="680" height="139" style="display:inline-block; margin:4px;width:17.997cm;height:3.688cm;" class="odt-zoomable" data-zoom-src="images/10000000000006010000013BE03C9519.png" /></td></tr></table>
 
 <ul>
-  <li>en [5], se selecciona y ejecuta la clase de prueba [6]
+  <li>en [5], se selecciona y se ejecuta la clase de prueba [6]
   </li>
   <li>en [7], los resultados de una prueba superada
   </li>

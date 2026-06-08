@@ -1102,7 +1102,7 @@
   </li>
   <li>La página solicitada procesa esta solicitud. Para ello, puede necesitar la ayuda de la capa [métier], que a su vez puede necesitar la capa [dao] si es necesario intercambiar datos con la base de datos. La aplicación recibe una respuesta de la capa [métier].
   </li>
-  <li>En función de esta, elige (3) la vista (= la respuesta) que se enviará al cliente, proporcionándole (4) la información (la plantilla) que necesita.
+  <li>En función de esta, elige (3) la vista (= la respuesta) que se enviará al cliente, proporcionándole (4) la información (el modelo) que necesita.
   </li>
   <li>La respuesta se envía al cliente (5)
   </li>
@@ -1148,7 +1148,7 @@
 
 <h2 id="112-generacion-de-vistas-en-un-contexto-multicontrolador">11.2. <span style="color: #4f81bd">Generación de vistas en un contexto multicontrolador</span></h2>
 <p>En la vista version anterior, todas las vistas se generaban a partir de la única página [Default.aspx]. Esta contenía dos componentes [MultiView] y las vistas se componían de una combinación de uno o dos componentes [View] pertenecientes a estos dos componentes [MultiView].</p>
-<p>Eficaz cuando hay pocas vistas, esta arquitectura alcanza sus límites en cuanto el número de componentes que forman las diferentes vistas se vuelve importante: de hecho, con cada solicitud que se realiza a la única página [Default.aspx], se instancian todos los componentes de la misma, cuando en realidad solo algunos de ellos se utilizarán para generar la respuesta al usuario. Así, se realiza un trabajo innecesario con cada nueva solicitud, trabajo que se vuelve penalizador cuando el número total de componentes de la página es elevado.</p>
+<p>Eficaz cuando hay pocas vistas, esta arquitectura alcanza sus límites en cuanto el número de componentes que forman las diferentes vistas se vuelve importante: de hecho, con cada solicitud que se realiza a la única página [Default.aspx], se instancian todos los componentes de la misma, cuando en realidad solo algunos de ellos se utilizarán para generar la respuesta al usuario. Así, se realiza un trabajo innecesario con cada nueva solicitud, trabajo que resulta penalizador cuando el número total de componentes de la página es elevado.</p>
 <p>Una solución es, por tanto, distribuir las vistas en diferentes páginas. Eso es lo que hacemos aquí. Analicemos dos casos diferentes de generación de vistas:</p>
 <ol>
   <li>la solicitud se realiza a una página P1 y esta genera la respuesta
@@ -1228,7 +1228,7 @@
       </li>
       <li>Si la página [Formulaire.aspx] procesa la solicitud y luego la transfiere mediante [Server.Transfer(&quot; Simulations.aspx &quot;)] a la página [Simulations.aspx], se mantiene la misma solicitud. El navegador mostrará entonces en [2], el URL de [Formulaire.aspx] hacia el que se realizó el POST.
       </li>
-      <li>Si la página [Formulaire.aspx] procesa la solicitud y luego la redirige a través de [Response.Redirect(&quot; Simulations.aspx &quot;)] hacia la página [Simulations.aspx], el navegador realiza entonces una segunda solicitud, un GET hacia [Simulations.aspx]. El navegador mostrará entonces en [2], el URL de [Simulations.aspx] hacia el que se dirigió el GET. Esto es lo que nos muestra la captura de pantalla [2] anterior.
+      <li>Si la página [Formulaire.aspx] procesa la solicitud y luego la redirige a través de [Response.Redirect(&quot; Simulations.aspx &quot;)] hacia la página [Simulations.aspx], el navegador realiza entonces una segunda solicitud, un GET hacia [Simulations.aspx]. El navegador mostrará entonces en [2] el URL de [Simulations.aspx] hacia el que se dirigió el GET. Esto es lo que nos muestra la captura de pantalla [2] anterior.
       </li>
     </ul>
   </li>
@@ -1367,7 +1367,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000336000000FF03B92A94.png" width="411" height="128" style="display:inline-block; margin:4px;width:10.874cm;height:3.374cm;" class="odt-zoomable" data-zoom-src="images/1000000000000336000000FF03B92A94.png" /></td></tr></table>
 
 <ul>
-  <li>en [1]: clic con el botón derecho en la página maestra y luego option [Ajouter une page de contenu]
+  <li>en [1]: clic con el botón derecho del ratón en la página maestra y, a continuación, option [Ajouter une page de contenu]
   </li>
   <li>en [2]: se genera una página por defecto, en este caso [WebForm1.aspx].
   </li>
@@ -1393,7 +1393,7 @@
   </li>
 </ul>
 
-<p><span style="color: #000000">Al renombrar la página [WebForm1.aspx] así generada, se pueden construir las diferentes páginas que tienen [MasterPage.master] como página maestra.</span></p>
+<p><span style="color: #000000">Al renombrar la página [WebForm1.aspx] así generada, se pueden crear las diferentes páginas que tienen [MasterPage.master] como página maestra.</span></p>
 <p>Para nuestra aplicación [SimuPaie], el aspecto visual de la página maestra será el siguiente:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004D80000016EF196DE77.png" width="620" height="183" style="display:inline-block; margin:4px;width:16.404cm;height:4.842cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D80000016EF196DE77.png" /></td></tr></table>
 
@@ -1625,7 +1625,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Repeater</span> <span style="color:#ff0000">id</span><span style="color:#0000ff">=&quot;rptErreurs&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">ItemTemplate</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">li</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                        &lt;%<span style="color:#0000ff">#</span> Container.DataItem %&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                        &lt;%# Container.DataItem %&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                    <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">li</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">ItemTemplate</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Repeater</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -1649,7 +1649,7 @@
       </li>
       <li>[Simulations.aspx]: la página que muestra la lista de simulaciones y gestiona las acciones que tienen lugar en esta misma página
       </li>
-      <li>[Erreurs.aspx]: la página que se muestra cuando se produce un error de inicialización de la aplicación. No hay acciones posibles en esta página.
+      <li>[Erreurs.aspx]: la página que se muestra cuando se produce un error de inicialización de la aplicación. No se pueden realizar acciones en esta página.
       </li>
     </ul>
   </li>
@@ -1701,26 +1701,26 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">public</span> <span style="color:#0000ff">partial</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">MasterPage</span> : System.Web.UI.<span style="color:#2b91af">MasterPage</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // visualización de vistas [saisie, employe, salaire] </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // el menú </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#2b91af">LinkButton</span> OptionFaireSimulation</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">get</span> { <span style="color:#0000ff">return</span> LinkButtonFaireSimulation; }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // visualización del menú </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // corregir el menú </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">void</span> SetMenu(<span style="color:#0000ff">bool</span> boolFaireSimulation, <span style="color:#0000ff">bool</span> boolEnregistrerSimulation, <span style="color:#0000ff">bool</span> boolEffacerSimulation, <span style="color:#0000ff">bool</span> boolFormulaireSimulation, <span style="color:#0000ff">bool</span> boolVoirSimulations, <span style="color:#0000ff">bool</span> boolTerminerSession)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">....</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // se guarda la simulación actual en la lista de simulaciones de la sesión </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // gestión de la option [Terminer la session] </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> LinkButtonTerminerSession_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">....</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // se muestra la vista [simulations] </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // inicializar página maestra </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> Page_Init(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">....</span></span>
@@ -1752,7 +1752,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">public</span> <span style="color:#0000ff">partial</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">MasterPage</span> : System.Web.UI.<span style="color:#2b91af">MasterPage</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // visualización de la vista [saisie] </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // el menú </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#2b91af">LinkButton</span> OptionFaireSimulation</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">get</span> { <span style="color:#0000ff">return</span> LinkButtonFaireSimulation; }</span></span>
@@ -1820,11 +1820,11 @@
 <p>No se puede acceder a los componentes 1 a 6 fuera de la página que los contiene. Las propiedades de las líneas 9 a 37 tienen como objetivo hacerlos accesibles a clases externas, en este caso las clases de otras páginas de la aplicación.</p>
 <h4 id="11523-el-metodo-setmenu">11.5.2.3. <span style="color: #4f81bd">El método SetMenu</span></h4>
 <p>El método público <em>SetMenu</em> permite a las páginas [Formulaire.aspx, Simulations.aspx, Erreurs.aspx] fijar el menú de la página maestra. Su código es básico:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
-<span class="odt-code-line"><span class="odt-code-line-content">        // posicionamiento del menú </span></span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">        // fijar el menú </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">public</span> <span style="color:#0000ff">void</span> SetMenu(<span style="color:#0000ff">bool</span> boolFaireSimulation, <span style="color:#0000ff">bool</span> boolEnregistrerSimulation, <span style="color:#0000ff">bool</span> boolEffacerSimulation, <span style="color:#0000ff">bool</span> boolFormulaireSimulation, <span style="color:#0000ff">bool</span> boolVoirSimulations, <span style="color:#0000ff">bool</span> boolTerminerSession)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#008000">// on fixe les options de menu </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // configuramos las opciones del menú </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            LinkButtonFaireSimulation.Visible = boolFaireSimulation;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            LinkButtonEnregistrerSimulation.Visible = boolEnregistrerSimulation;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            LinkButtonEffacerSimulation.Visible = boolEffacerSimulation;</span></span>
@@ -1875,10 +1875,10 @@
 <span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">partial</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Formulaire</span> : System.Web.UI.<span style="color:#2b91af">Page</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// RAZ del formulario </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// carga de la página </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> Page_Load(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        // se recuperan las simulaciones en la sesión</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // gestor de eventos</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        Master.OptionFaireSimulation.Click += OptFaireSimulation_Click;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        Master.OptionEffacerSimulation.Click += OptEffacerSimulation_Click;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        Master.OptionVoirSimulations.Click += OptVoirSimulations_Click;</span></span>
@@ -1886,13 +1886,13 @@
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // ¿hay simulaciones? </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // cálculo de la nómina </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">private</span> <span style="color:#0000ff">void</span> OptFaireSimulation_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">....</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // vista [simulations] visible </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // borrar la simulación </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">private</span> <span style="color:#0000ff">void</span> OptEffacerSimulation_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
@@ -1963,13 +1963,13 @@
 <span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">public</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">Global</span> : System.Web.<span style="color:#2b91af">HttpApplication</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // vista [SimulationsVides] </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // --- datos estáticos de la aplicación ---</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#2b91af">Employe</span>[] Employes;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#2b91af">IPamMetier</span> PamMetier = <span style="color:#0000ff">null</span>;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">string</span> Msg;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">static</span> <span style="color:#0000ff">bool</span> Erreur = <span style="color:#0000ff">false</span>;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // se fija el menú </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // inicio de la aplicación</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#0000ff">void</span> Application_Start(<span style="color:#0000ff">object</span> sender, <span style="color:#2b91af">EventArgs</span> e)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
@@ -2003,14 +2003,14 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> Page_Init(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            // se recuperan las simulaciones de la sesión</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // gestor de eventos </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            LinkButtonTerminerSession.Click += LinkButtonTerminerSession_Click;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#008000">// des erreurs d&#x27;initialisation ? </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // ¿Errores de inicialización? </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">if</span> (<span style="color:#2b91af">Global</span>.Erreur)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#008000">// la page encapsulée est-elle la page d&#x27;erreurs ? </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                // ¿Es la página encapsulada la página de errores? </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">bool</span> isPageErreurs =<span style="color:#0000ff">...</span>;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#008000">// si c&#x27;est la page d&#x27;erreurs qui s&#x27;affiche, on laisse faire sinon on redirige le client vers la page d&#x27;erreurs </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                // si se muestra la página de errores, se deja tal cual; de lo contrario, se redirige al cliente a la página de errores </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">if</span> (!isPageErreurs)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                    Response.Redirect(<span style="color:#a31515">&quot;Erreurs.aspx&quot;</span>);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">return</span>;</span></span>
@@ -2066,7 +2066,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">&lt;</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Repeater</span> <span style="color:#ff0000">id</span><span style="color:#0000ff">=&quot;rptErreurs&quot;</span> <span style="color:#ff0000">runat</span><span style="color:#0000ff">=&quot;server&quot;&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">&lt;</span><span style="color:#a31515">ItemTemplate</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                    <span style="color:#0000ff">&lt;</span><span style="color:#a31515">li</span><span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                        &lt;%<span style="color:#0000ff">#</span> Container.DataItem %&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                        &lt;%# Container.DataItem %&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                    <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">li</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">ItemTemplate</span><span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">&lt;/</span><span style="color:#a31515">asp</span><span style="color:#0000ff">:</span><span style="color:#a31515">Repeater</span><span style="color:#0000ff">&gt;</span></span></span>
@@ -2134,14 +2134,14 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> Page_Init(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            // se elimina la simulación indicada (e.RowIndex es el n.º de la línea eliminada)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // gestor de eventos </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            LinkButtonTerminerSession.Click += LinkButtonTerminerSession_Click;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#008000">// des erreurs d&#x27;initialisation ? </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // ¿Errores de inicialización? </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">if</span> (<span style="color:#2b91af">Global</span>.Erreur)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#008000">// la page encapsulée est-elle la page d&#x27;erreurs ? </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                // ¿Es la página encapsulada la página de errores? </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">bool</span> isPageErreurs = <span style="color:#0000ff">this</span>.FindControl(<span style="color:#a31515">&quot;form1&quot;</span>).FindControl(<span style="color:#a31515">&quot;contenu&quot;</span>).FindControl(<span style="color:#a31515">&quot;ContentPlaceHolder1&quot;</span>).FindControl(<span style="color:#a31515">&quot;rptErreurs&quot;</span>) != <span style="color:#0000ff">null</span>;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#008000">// si c&#x27;est la page d&#x27;erreurs qui s&#x27;affiche, on laisse faire sinon on redirige le client vers la page d&#x27;erreurs </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                // si se muestra la página de errores, se deja tal cual; de lo contrario, se redirige al cliente a la página de errores </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">if</span> (!isPageErreurs)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                    Response.Redirect(<span style="color:#a31515">&quot;Erreurs.aspx&quot;</span>);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">return</span>;</span></span>
@@ -2154,7 +2154,7 @@
   </li>
   <li>línea 6: se comprueba si la clase [Global] ha establecido su valor booleano <i>Error</i>
   </li>
-  <li>línea 9: si es así, el booleano <i>IsPageErreurs </i>indica si la página encapsulada en la página maestra es la página [Erreurs.aspx]
+  <li>línea 9: si es así, el valor booleano <i>IsPageErreurs </i>indica si la página encapsulada en la página maestra es la página [Erreurs.aspx]
   </li>
   <li>línea 12: si la página encapsulada en la página maestra no es la página [Erreurs.aspx], entonces se redirige al cliente a esta página; de lo contrario, no se hace nada.
   </li>
@@ -2168,9 +2168,9 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> LinkButtonTerminerSession_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#008000">// on abandonne la session </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // se abandona la sesión </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            Session.Abandon();</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#008000">// on affiche la vue [formulaire] </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // se muestra la vista [formulaire] </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            Response.Redirect(<span style="color:#a31515">&quot;Formulaire.aspx&quot;</span>);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
@@ -2194,17 +2194,17 @@
 <span class="odt-code-line"><span class="odt-code-line-content">  {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> Page_Load(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#008000">// des erreurs d&#x27;initialisation ? </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      // ¿Errores de inicialización? </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#0000ff">if</span> (<span style="color:#2b91af">Global</span>.Erreur)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// on prépare le modèle de la page [erreurs] </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // se prepara la plantilla de la página [erreurs] </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#2b91af">List</span>&lt;<span style="color:#0000ff">string</span>&gt; erreursInitialisation = <span style="color:#0000ff">new</span> <span style="color:#2b91af">List</span>&lt;<span style="color:#0000ff">string</span>&gt;();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        erreursInitialisation.Add(<span style="color:#2b91af">Global</span>.Msg);</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// on associe la liste d&#x27;erreurs à son composant </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // se asocia la lista de errores a su componente </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        rptErreurs.DataSource = erreursInitialisation;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        rptErreurs.DataBind();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      <span style="color:#008000">// on fixe le menu </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">      // se fija el menú </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">      Master.SetMenu(<span style="color:#0000ff">false</span>, <span style="color:#0000ff">false</span>, <span style="color:#0000ff">false</span>, <span style="color:#0000ff">false</span>, <span style="color:#0000ff">false</span>, <span style="color:#0000ff">false</span>);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
@@ -2234,17 +2234,17 @@
 <h3 id="1154-codigo-de-control-de-la-pagina-formulaireaspx">11.5.4. <span style="color: #4f81bd">Código de control de la página [Formulaire.aspx]</span></h3>
 <h4 id="11541-estructura-de-la-clase">11.5.4.1. <span style="color: #4f81bd">Estructura de la clase</span></h4>
 <p>El esqueleto del código de control de la página [Formulaire.aspx] podría ser el siguiente:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">using</span> Pam.Metier.Entites;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">partial</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">PageFormulaire</span> : System.Web.UI.<span style="color:#2b91af">Page</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // ¿quedan simulaciones? </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // carga de la página </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> Page_Load(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        // se rellena el GridView </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // gestor de eventos</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        Master.OptionFaireSimulation.Click += OptFaireSimulation_Click;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        Master.OptionEffacerSimulation.Click += OptEffacerSimulation_Click;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        Master.OptionVoirSimulations.Click += OptVoirSimulations_Click;</span></span>
@@ -2252,13 +2252,13 @@
 <span class="odt-code-line"><span class="odt-code-line-content">....</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // vista [SimulationsVides] </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // cálculo de la nómina </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">private</span> <span style="color:#0000ff">void</span> OptFaireSimulation_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">....</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // se abandona la sesión </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // borrar la simulación </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">private</span> <span style="color:#0000ff">void</span> OptEffacerSimulation_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
@@ -2296,21 +2296,21 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> Page_Load(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        // mostrar la vista [saisies] </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // gestor de eventos</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        Master.OptionFaireSimulation.Click += OptFaireSimulation_Click;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        Master.OptionEffacerSimulation.Click += OptEffacerSimulation_Click;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        Master.OptionVoirSimulations.Click += OptVoirSimulations_Click;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        Master.OptionEnregistrerSimulation.Click += OptEnregistrerSimulation_Click;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        // posicionamiento del menú </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // Visualización de vista [saisies] </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        ...</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        /// &lt;summary&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // Posicionamiento del menú de la página maestra </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        ...</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        /// Descripción resumida de Servicio1</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // procesamiento de la solicitud GET </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">if</span> (!IsPostBack)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#008000">// chargement des noms des employés dans le combo </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // carga de los nombres de los empleados en el combo </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#008000">// init vue [saisies] avec saisies mémorisées dans la session si elles existent </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // inicialización de la vista [saisies] con los datos introducidos memorizados en la sesión, si existen </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">....</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
@@ -2344,21 +2344,21 @@
 <h4 id="11543-gestion-de-eventos-al-hacer-clic-en-los-enlaces-del-menu">11.5.4.3. <span style="color: #4f81bd">Gestión de eventos al hacer clic en los enlaces del menú</span></h4>
 <p>La estructura de los gestores de eventos <em>de clic</em> en los enlaces de la página maestra es la siguiente:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
-<span class="odt-code-line"><span class="odt-code-line-content">/// &lt;/summary&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// cálculo de la nómina </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">private</span> <span style="color:#0000ff">void</span> OptFaireSimulation_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        // Para permitir la llamada a este servicio web desde un script utilizando ASP.NET AJAX, elimine los símbolos de comentario de la siguiente línea. </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // efecto Ajax</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#2b91af">Thread</span>.Sleep(3000);</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// page valide ? </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // ¿página válida? </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        Page.Validate();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">if</span> (!Page.IsValid)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            // [System.Web.Script.Services.ScriptService]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // visualización de la vista [saisie] </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// la page est valide - on récupère les saisies </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // la página es válida: se recuperan los datos introducidos </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// on calcule le salaire de l&#x27;employé </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // se calcula el salario del empleado </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#2b91af">FeuilleSalaire</span> feuillesalaire;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">try</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
@@ -2366,44 +2366,44 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">catch</span> (<span style="color:#2b91af">PamException</span> ex)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#008000">// on a rencontré un problème </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // se ha producido un error </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">return</span>;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// on met le résultat dans la session </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // se guarda el resultado en la sesión </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        Session[<span style="color:#a31515">&quot;simulation&quot;</span>] = ...;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// on met les saisies dans la session </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // se guardan las entradas en la sesión </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        // --- datos estáticos de la aplicación ---</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // visualización </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        // instanciación de la capa [metier]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // visualización de vistas </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        // se recupera la tabla simplificada de empleados </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // visualización del menú MasterPage </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // lista simplificada de empleados</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // borrar la simulación </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">private</span> <span style="color:#0000ff">void</span> OptEffacerSimulation_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        // salario de un empleado</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // visualización del panel [saisie] </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        // lista de todas las identidades de los empleados </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // selección del primer empleado </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> OptVoirSimulations_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// on met les saisies dans la session </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // se introducen los datos en la sesión </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// on affiche la vue [simulations] </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // se muestra la vista [simulations] </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        Response.Redirect(<span style="color:#a31515">&quot;simulations.aspx&quot;</span>);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> OptEnregistrerSimulation_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// on enregistre la simulation courante dans la session de l&#x27;utilisateur </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // se guarda la simulación actual en la sesión del usuario </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// on affiche la vue [simulations] </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // se muestra la vista [simulations] </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        Response.Redirect(<span style="color:#a31515">&quot;simulations.aspx&quot;</span>);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
@@ -2421,56 +2421,56 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">partial</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">PageSimulations</span> : System.Web.UI.<span style="color:#2b91af">Page</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // ------- el cálculo del salario </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // las simulaciones </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">private</span> <span style="color:#2b91af">List</span>&lt;<span style="color:#2b91af">Simulation</span>&gt; simulations;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // la capa [metier] que se va a probar </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // carga de la página</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> Page_Load(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        // constructor</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // gestor de eventos </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        Master.OptionFormulaireSimulation.Click += OptFormulaireSimulation_Click;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        GridViewSimulations.RowDeleting += GridViewSimulations_RowDeleting;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// on récupère les simulations dans la session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // se recuperan las simulaciones de la sesión</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        simulations = ...;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// y-a-t-il des simulations ? </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // ¿hay simulaciones? </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">if</span> (simulations.Count != 0)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            // instanciación de la capa [dao]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // primera vista visible </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            ...</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#008000">// on remplit le gridview </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // se rellena la vista de cuadrícula </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            ...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">else</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            // verificación del número de empleados </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // segunda vista </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            ...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// on fixe le menu </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // se fija el menú </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        ...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> GridViewSimulations_RowDeleting(<span style="color:#0000ff">object</span> sender, System.Web.UI.WebControls.<span style="color:#2b91af">GridViewDeleteEventArgs</span> e)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// on récupère les simulations dans la session</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // se recuperan las simulaciones de la sesión</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#2b91af">List</span>&lt;<span style="color:#2b91af">Simulation</span>&gt; simulations = ...;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// on supprime la simulation désignée (e.RowIndex représente le n° de la ligne supprimée dans le gridview)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // se elimina la simulación indicada (e.RowIndex representa el número de la línea eliminada en la vista de cuadrícula)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        ..</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// reste-t-il des simulations ? </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // ¿quedan simulaciones? </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">if</span> (simulations.Count != 0)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#008000">// on remplit le gridview </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // se rellena la vista de cuadrícula </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            ...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">else</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            // cálculo de una nómina </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            // vista [SimulationsVides] </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            ...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> OptFormulaireSimulation_Click(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// on affiche la vue [formulaire] </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // se muestra la vista [formulaire] </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        Response.Redirect(<span style="color:#a31515">&quot;formulaire.aspx&quot;</span>);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
@@ -2491,7 +2491,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">protected</span> <span style="color:#0000ff">void</span> Page_Init(<span style="color:#0000ff">object</span> sender, System.<span style="color:#2b91af">EventArgs</span> e)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    {</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">// on redirige vers le formulaire de saisie </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        // se redirige al formulario de introducción de datos </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        Response.Redirect(<span style="color:#a31515">&quot;Formulaire.aspx&quot;</span>);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
@@ -2500,9 +2500,6 @@
 <p>La página de presentación [Default.aspx] solo contiene la directiva que la vincula a [Default.aspx.cs]:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;%<span style="color:#0000ff">@</span> <span style="color:#a31515">Page</span> <span style="color:#ff0000">Language</span><span style="color:#0000ff">=&quot;C#&quot;</span> <span style="color:#ff0000">AutoEventWireup</span><span style="color:#0000ff">=&quot;true&quot;</span></span></span>
-</code></pre></div>
-
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#ff0000">CodeBehind</span><span style="color:#0000ff">=&quot;Default.aspx.cs&quot;</span> <span style="color:#ff0000">Inherits</span><span style="color:#0000ff">=&quot;pam_v7._Default&quot;</span> <span style="color:#ff0000">Title</span><span style="color:#0000ff">=&quot;Untitled Page&quot;</span> %&gt;</span></span>
 </code></pre></div>
 

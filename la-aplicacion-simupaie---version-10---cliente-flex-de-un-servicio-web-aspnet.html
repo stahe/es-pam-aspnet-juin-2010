@@ -923,7 +923,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#006633">&lt;mx:Script&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        &lt;![CDATA[</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">...</span>    </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// gestión de la option [Terminer la session] </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// datos</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> employes : ArrayCollection;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
@@ -969,7 +969,7 @@
   </li>
   <li><span style="color: #000000">línea 8: el texto</span>
   </li>
-  <li><span style="color: #000000">línea 9: la lista desplegable en la que se incluirá la lista de empleados. La etiqueta </span><i><span style="color: #000000">dataProvider=&quot;</span></i><i><span style="color: #990000">{</span></i><i><span style="color: #000000">employes</span></i><i><span style="color: #990000">}</span></i><i><span style="color: #000000">&quot; </span></i><span style="color: #000000">indica la fuente de los datos que deben completar la lista. Aquí, la lista se rellenará con el objeto </span><i><span style="color: #000000">«employes» </span></i><span style="color: #000000">definido en la línea 36. Para poder escribir </span><i><span style="color: #000000">dataProvider=&quot;</span></i><i><span style="color: #990000">{</span></i><i><span style="color: #000000">employes</span></i><i><span style="color: #990000">}</span></i><i><span style="color: #000000">&quot;, </span></i><span style="color: #000000">es necesario que el campo </span><i><span style="color: #000000">«employes» </span></i><span style="color: #000000">tenga el atributo [Bindable] (línea 35). Este atributo permite que una variable ActionScript sea referenciada fuera de la etiqueta &lt;</span><i><span style="color: #000000">mx:Script</span></i><span style="color: #000000">&gt;. El campo </span><i><span style="color: #000000">«employes» </span></i><span style="color: #000000">es de tipo </span><i><span style="color: #000000">ArrayCollection</span></i><span style="color: #000000">, un tipo ActionScript que permite almacenar listas de objetos, en este caso una lista de objetos de tipo </span><i><span style="color: #000000">«Employe</span></i><span style="color: #000000">».</span>
+  <li><span style="color: #000000">línea 9: la lista desplegable en la que se incluirá la lista de empleados. La etiqueta </span><i><span style="color: #000000">dataProvider=&quot;</span></i><i><span style="color: #990000">{</span></i><i><span style="color: #000000">employes</span></i><i><span style="color: #990000">}</span></i><i><span style="color: #000000">&quot; </span></i><span style="color: #000000">indica la fuente de los datos que deben completar la lista. Aquí, la lista se rellenará con el objeto </span><i><span style="color: #000000">«employes» </span></i><span style="color: #000000">definido en la línea 36. Para poder escribir </span><i><span style="color: #000000">dataProvider=&quot;</span></i><i><span style="color: #990000">{</span></i><i><span style="color: #000000">employes</span></i><i><span style="color: #990000">}</span></i><i><span style="color: #000000">&quot;, </span></i><span style="color: #000000">es necesario que el campo </span><i><span style="color: #000000">«employes» </span></i><span style="color: #000000">tenga el atributo [Bindable] (línea 35). Este atributo permite que se haga referencia a una variable ActionScript fuera de la etiqueta &lt;</span><i><span style="color: #000000">mx:Script</span></i><span style="color: #000000">&gt;. El campo </span><i><span style="color: #000000">«employes» </span></i><span style="color: #000000">es de tipo </span><i><span style="color: #000000">ArrayCollection</span></i><span style="color: #000000">, un tipo ActionScript que permite almacenar listas de objetos, en este caso una lista de objetos de tipo </span><i><span style="color: #000000">«Employe</span></i><span style="color: #000000">».</span>
   </li>
   <li><span style="color: #000000">líneas 11-14: un contenedor vertical que contendrá un texto y un campo de entrada</span>
   </li>
@@ -1058,44 +1058,44 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.collections.ArrayCollection;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.rpc.events.ResultEvent;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                        </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// inicializar página maestra </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// datos</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> employes : ArrayCollection;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> init():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on note les coordonnées de la zone de message</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// se anotan los datos del campo de mensaje</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                msgHeight=msg.height;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                msgWidth=msg.width;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on cache la zone de message</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// se oculta el área de mensajes</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                hideMsg();</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// requête au service web distant pour avoir la liste simplifiée des employés</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// solicitud al servicio web remoto para obtener la lista simplificada de empleados</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                pam.GetAllIdentitesEmployes.send();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> wsFault(event:Event):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                    <span style="color:#000000">// on signale l&#x27;erreur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                    <span style="color:#000000">// se notifica el error</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    msg.text=</span><span style="font-weight:bold;color:#990000">&quot;Service distant indisponible&quot;</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                    showMsg();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> loadEmployesCompleted(event:ResultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// el menú </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// Relleno del cuadro combinado de empleados</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                employes=event.result </span><span style="font-weight:bold;color:#0033ff">as</span><span style="color:#000000"> ArrayCollection;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> displayEmploye(employe:Object):String{</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// fijar el menú </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// identidad de un empleado</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="font-weight:bold;color:#0033ff">return</span><span style="color:#000000"> employe.Prenom + </span><span style="font-weight:bold;color:#990000">&quot; &quot;</span><span style="color:#000000"> + employe.Nom;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> loadEmployesFault(event:FaultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// configuramos las opciones del menú </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// Visualización del mensaje de error</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                msg.text=event.fault.message;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// carga de la página </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// formulario</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                showMsg();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// gestor de eventos</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// gestión de bloques</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> msgWidth:int;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> msgHeight:int;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        </span></span>
@@ -1119,11 +1119,8 @@
   </li>
 </ul>
 
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;mx:Application</span><span style="color:#000000"> xmlns:mx=&quot;</span><span style="color:#990000">http://www.adobe.com/2006/mxml</span><span style="color:#000000">&quot; layout=&quot;</span><span style="color:#990000">vertical</span><span style="color:#000000">&quot;</span></span></span>
-</code></pre></div>
-
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">&lt;mx:Application</span><span style="color:#000000"> xmlns:mx=&quot;</span><span style="color:#990000">http://www.adobe.com/2006/mxml</span><span style="color:#000000">&quot; layout=&quot;</span><span style="color:#990000">vertical</span><span style="color:#000000">&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    creationComplete=&quot;init()&quot;</span><span style="color:#0000ff">&gt;</span></span></span>
 </code></pre></div>
 
@@ -1132,7 +1129,7 @@
   </li>
   <li><span style="color: #000000">línea 16: se oculta el área de mensajes. Al principio, no hay ningún error.</span>
   </li>
-  <li><span style="color: #000000">Línea 18: se llama al método </span><i><span style="color: #000000">GetAllIdentitesEmploye </span></i><span style="color: #000000">(línea 6 del servicio web) del servicio web </span><i><span style="color: #000000">pam </span></i><span style="color: #000000">(línea 1 del servicio web). La llamada es asíncrona. La línea 7 del servicio web indica que el método </span><i><span style="color: #000000">loadEmployesCompleted </span></i><span style="color: #000000">se ejecutará si esta llamada asíncrona finaliza correctamente. La línea 8 del servicio web indica que se ejecutará el método </span><i><span style="color: #000000">loadEmployesFault </span></i><span style="color: #000000">si esta llamada asíncrona falla.</span>
+  <li><span style="color: #000000">Línea 18: se llama al método </span><i><span style="color: #000000">GetAllIdentitesEmploye </span></i><span style="color: #000000">(línea 6 del servicio web) del servicio web </span><i><span style="color: #000000">pam </span></i><span style="color: #000000">(línea 1 del servicio web). La llamada es asíncrona. La línea 7 del servicio web indica que se ejecutará el método </span><i><span style="color: #000000">loadEmployesCompleted </span></i><span style="color: #000000">si esta llamada asíncrona finaliza correctamente. La línea 8 del servicio web indica que se ejecutará el método </span><i><span style="color: #000000">loadEmployesFault </span></i><span style="color: #000000">si esta llamada asíncrona falla.</span>
   </li>
   <li><span style="color: #000000">línea 27: el método </span><i><span style="color: #000000">loadEmployesCompleted, </span></i><span style="color: #000000">que se ejecuta si la llamada al servicio web de la línea 18 se completa con éxito.</span>
   </li>
@@ -1292,7 +1289,7 @@
 <span class="normal"><a href="#__codelineno-0-44">44</a></span>
 <span class="normal"><a href="#__codelineno-0-45">45</a></span>
 <span class="normal"><a href="#__codelineno-0-46">46</a></span>
-<span class="normal"><a href="#__codelineno-0-47">47</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="o">&lt;!--</span><span class="w"> </span><span class="n">saved</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">url</span><span class="o">=</span><span class="p">(</span><span class="mi">0014</span><span class="p">)</span><span class="n">about</span><span class="p">:</span><span class="n">internet</span><span class="w"> </span><span class="o">--&gt;</span>
+<span class="normal"><a href="#__codelineno-0-47">47</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="o">&lt;!--</span><span class="w"> </span><span class="n">guardado</span><span class="w"> </span><span class="n">desde</span><span class="w"> </span><span class="n">url</span><span class="o">=</span><span class="p">(</span><span class="mi">0014</span><span class="p">)</span><span class="n">about</span><span class="p">:</span><span class="n">internet</span><span class="w"> </span><span class="o">--&gt;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="o">&lt;</span><span class="n">html</span><span class="w"> </span><span class="n">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="o">&gt;</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="o">&lt;!--</span><span class="w"> </span>
@@ -1308,9 +1305,9 @@
 <a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
 <a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="o">&lt;</span><span class="n">meta</span><span class="w"> </span><span class="n">http</span><span class="o">-</span><span class="n">equiv</span><span class="o">=</span><span class="s">&quot;Content-Type&quot;</span><span class="w"> </span><span class="n">content</span><span class="o">=</span><span class="s">&quot;text/html; charset=utf-8&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
 <a id="__codelineno-0-16" name="__codelineno-0-16"></a>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="o">&lt;!--</span><span class="w">  </span><span class="n">BEGIN</span><span class="w"> </span><span class="n">Browser</span><span class="w"> </span><span class="n">History</span><span class="w"> </span><span class="n">required</span><span class="w"> </span><span class="n">section</span><span class="w"> </span><span class="o">--&gt;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="o">&lt;!--</span><span class="w">   </span><span class="n">BEGIN</span><span class="w"> </span><span class="n">Sección</span><span class="w"> </span><span class="err">«</span><span class="n">Historial</span><span class="w"> </span><span class="n">del</span><span class="w"> </span><span class="n">navegador</span><span class="err">»</span><span class="w"> </span><span class="n">obligatoria</span><span class="w"> </span><span class="o">--&gt;</span>
 <a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="o">&lt;</span><span class="n">link</span><span class="w"> </span><span class="n">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="w"> </span><span class="n">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="w"> </span><span class="n">href</span><span class="o">=</span><span class="s">&quot;history/history.css&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="o">&lt;!--</span><span class="w">  </span><span class="n">END</span><span class="w"> </span><span class="n">Browser</span><span class="w"> </span><span class="n">History</span><span class="w"> </span><span class="n">required</span><span class="w"> </span><span class="n">section</span><span class="w"> </span><span class="o">--&gt;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="o">&lt;!--</span><span class="w">   </span><span class="n">END</span><span class="w"> </span><span class="n">Sección</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">historial</span><span class="w"> </span><span class="n">del</span><span class="w"> </span><span class="n">navegador</span><span class="w"> </span><span class="n">requerida</span><span class="w"> </span><span class="o">--&gt;</span>
 <a id="__codelineno-0-20" name="__codelineno-0-20"></a>
 <a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
 <a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="p">....</span>
@@ -1445,9 +1442,9 @@
 <p>El evento <strong>«change»</strong> es difundido por el combo cuando el usuario cambia su selección. El gestor de este evento será el método <strong>displayInfosEmploye</strong>.</p>
 <p>Recordemos los métodos expuestos por el servicio web remoto:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span class="odt-code-line-content">    // cálculo de la nómina </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // lista de todas las identidades de los empleados </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">public</span> <span style="color:#2b91af">Employe</span>[] GetAllIdentitesEmployes();</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    // borrar la simulación </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    // ------- Cálculo del salario </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">public</span> <span style="color:#2b91af">FeuilleSalaire</span> GetSalaire(<span style="color:#0000ff">string</span> ss, <span style="color:#0000ff">double</span> heuresTravaillees, <span style="color:#0000ff">int</span> joursTravailles);</span></span>
 </code></pre></div>
 
@@ -1494,7 +1491,7 @@
   </li>
   <li>en [2], el enlace a la página de prueba del método [GetSalaire]
   </li>
-  <li>en [3], los parámetros que espera el método. <b>Estos son los nombres </b>que hay que utilizar como etiquetas secundarias de la etiqueta &lt;<i>mx:request</i>&gt;.
+  <li>en [3], los parámetros esperados por el método. <b>Estos son los nombres </b>que hay que utilizar como etiquetas secundarias de la etiqueta &lt;<i>mx:request</i>&gt;.
   </li>
 </ul>
 
@@ -1563,7 +1560,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#006633">&lt;mx:Script&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        &lt;![CDATA[</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// --- datos estáticos de la aplicación ---</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// datos</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> employes : ArrayCollection;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span></span>
@@ -1582,7 +1579,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.collections.ArrayCollection;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">import</span><span style="color:#000000"> mx.rpc.events.ResultEvent;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                        </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// inicio de la aplicación</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// datos</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> employes : ArrayCollection;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            [</span><span style="font-weight:bold;color:#0033ff">Bindable</span><span style="color:#000000">]</span></span></span>
@@ -1591,18 +1588,18 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> joursDeTravail:int;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> init():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on note les hauteur / largeur de # blocs</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// se anotan la altura y la anchura de # bloques</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                employeHeight=employe.height;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                employeWidth=employe.width;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on cache certains éléments</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// se ocultan algunos elementos</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                hideEmploye();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> displayInfosEmploye():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// gestor de eventos </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// formulario</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                hideEmploye();</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on calcule un salaire fictif</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// se calcula un salario ficticio</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                heuresTravaillees=0;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                joursDeTravail=0;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                pam.GetSalaire.send();</span></span>
@@ -1616,7 +1613,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-style:italic;color:#009900">...</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// ¿Errores de inicialización? </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// vistas parciales -------------------------------------------------</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> employeHeight:int;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> employeWidth:int;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        </span></span>
@@ -1662,11 +1659,11 @@
 <p><span style="color: #000000">El método </span><em><span style="color: #000000">GetSalaireCompleted </span></em><span style="color: #000000">se ejecuta si el método </span><em><span style="color: #000000">GetSalaire </span></em><span style="color: #000000">del servicio web finaliza correctamente:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> getSalaireCompleted(event:ResultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on cache le msg d&#x27;erreur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// se oculta el mensaje de error</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                hideMsg();</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on reçoit une feuille de salaire</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// se recibe una nómina</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> feuilleSalaire:Object=event.result;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// ¿Es la página encapsulada la página de errores? </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// visualización</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                lblNom.text=feuilleSalaire.Employe.Nom;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                lblPreNom.text=feuilleSalaire.Employe.Prenom;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                lblAdresse.text=feuilleSalaire.Employe.Adresse;</span></span>
@@ -1701,11 +1698,11 @@
 <p><span style="color: #000000">Volvamos al método </span><em><span style="color: #000000">getSalaireCompleted</span></em><span style="color: #000000">:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> getSalaireCompleted(event:ResultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on cache le msg d&#x27;erreur</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// se oculta el mensaje de error</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                hideMsg();</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// on reçoit une feuille de salaire</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// se recibe una nómina</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> feuilleSalaire:Object=event.result;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// si se muestra la página de errores, se deja tal cual; de lo contrario, se redirige al cliente a la página de errores </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// visualización</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                lblNom.text=feuilleSalaire.Employe.Nom;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                lblPreNom.text=feuilleSalaire.Employe.Prenom;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                lblAdresse.text=feuilleSalaire.Employe.Adresse;</span></span>
@@ -1736,9 +1733,9 @@
 <p><span style="color: #000000">El método getSalaireFault se ejecuta si el método </span><em><span style="color: #000000">GetSalaire </span></em><span style="color: #000000">del servicio web falla:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> getSalaireFault(event:FaultEvent):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// Container.DataItem %&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// visualización del mensaje de error</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                msg.text=event.fault.message;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// Container.DataItem %&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// formulario</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                showMsg();            </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
 </code></pre></div>
@@ -1827,7 +1824,7 @@
       </li>
       <li><i><span style="color: #000000">negativeError</span></i><span style="color: #000000">: el mensaje de error cuando el número es negativo y se tiene el atributo allowNegative=&quot;false&quot;</span>
       </li>
-      <li><i><span style="color: #000000">requiredFieldError</span></i><span style="color: #000000">: mensaje de error cuando no se ha introducido ningún dato, aunque se tenga el atributo requiredField=&quot;true&quot;</span>
+      <li><i><span style="color: #000000">requiredFieldError</span></i><span style="color: #000000">: mensaje de error cuando no se ha introducido ningún dato, aunque el atributo requiredField=&quot;true&quot;</span>
       </li>
       <li><i><span style="color: #000000">invalidFormatCharsError</span></i><span style="color: #000000">: ¿el mensaje de error cuando el texto contiene caracteres o un formato no válido?</span>
       </li>
@@ -1844,9 +1841,9 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> validateForm(event:Event):</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000"> </span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        {                    </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// on valide les heures travaillées</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// se validan las horas trabajadas</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#6699cc">var</span><span style="color:#000000"> evt:ValidationResultEvent = heuresTravailleesValidator.validate();</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// validation réussie ?</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// ¿Validación correcta?</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            btnSalaire.enabled=evt.type==ValidationResultEvent.VALID;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
@@ -1867,7 +1864,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005AD000000A75E5B9FE6.png" width="680" height="78" style="display:inline-block; margin:4px;width:17.997cm;height:2.069cm;" class="odt-zoomable" data-zoom-src="images/10000000000005AD000000A75E5B9FE6.png" /></td></tr></table>
 
 <ul>
-  <li>un campo erróneo tiene un borde rojo [1, 2, 3], un campo correcto un borde azul [4].
+  <li>un campo erróneo tiene un borde rojo [1, 2, 3], un campo correcto tiene un borde azul [4].
   </li>
   <li>En [4], observaremos que el botón [Salaire] está activo porque el número de horas trabajadas es correcto.
   </li>
@@ -1905,13 +1902,13 @@
 <p>El método <em>calculerSalaire</em> es el siguiente:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#0033ff">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#339966">function</span><span style="color:#000000"> calculerSalaire():</span><span style="font-weight:bold;color:#0033ff">void</span><span style="color:#000000">{</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// gestor de eventos </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// preparación del formulario</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                affichageSalaire=</span><span style="font-weight:bold;color:#0033ff">true</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                msg.text=</span><span style="font-weight:bold;color:#990000">&quot;&quot;</span><span style="color:#000000">;                </span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// ¿Errores de inicialización? </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// parámetros del cálculo del salario</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                heuresTravaillees=Number(txtHeuresTravaillees.text);</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                joursDeTravail=int(joursTravailles.value);</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// ¿Es la página encapsulada la página de errores? </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#000000">// se solicita el salario al servicio web</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                pam.GetSalaire.send();</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
